@@ -3,7 +3,7 @@
 # Copyright (C) 2012 CEA
 # Pierre Raybaut
 # Licensed under the terms of the CECILL License
-# (see guiqwt/__init__.py for details)
+# (see plotpy/__init__.py for details)
 
 """2D-Histogram algorithm"""
 
