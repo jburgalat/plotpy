@@ -1,1 +1,1 @@
-.. automodule:: guiqwt.baseplot
+.. automodule:: plotpy.baseplot

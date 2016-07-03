@@ -1,1 +1,1 @@
-.. automodule:: guiqwt.panels
+.. automodule:: plotpy.panels

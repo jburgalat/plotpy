@@ -1,1 +1,1 @@
-.. automodule:: guiqwt.label
+.. automodule:: plotpy.label

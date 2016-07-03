@@ -1,8 +1,8 @@
-# guiqwt: Python tools for curve and image plotting
+# plotpy: Python tools for curve and image plotting
 
-<img src="http://pythonhosted.org/guiqwt/_images/panorama.png">
+<img src="http://pythonhosted.org/plotpy/_images/panorama.png">
 
-See [documentation](http://pythonhosted.org/guiqwt/) for more details on 
+See [documentation](http://pythonhosted.org/plotpy/) for more details on 
 the library and [changelog](CHANGELOG.md) for recent history of changes.
 
 Copyright © 2009-2015 CEA, Pierre Raybaut, licensed under the terms of the 
@@ -12,8 +12,8 @@ Copyright © 2009-2015 CEA, Pierre Raybaut, licensed under the terms of the
 ## Overview
 
 Based on ``PythonQwt`` (a pure Python/PyQt reimplementation of the curve 
-plotting Qwt C++ library, included in guiqwt base source code) and on the 
-scientific modules NumPy and SciPy, ``guiqwt`` is a Python library providing 
+plotting Qwt C++ library, included in plotpy base source code) and on the 
+scientific modules NumPy and SciPy, ``plotpy`` is a Python library providing 
 efficient 2D data-plotting features (curve/image visualization and related 
 tools) for interactive computing and signal/image processing application 
 development. It is based on Qt graphical user interfaces library, and 

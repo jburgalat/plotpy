@@ -1,1 +1,1 @@
-.. automodule:: guiqwt.pyplot
+.. automodule:: plotpy.pyplot

@@ -1,3 +1,3 @@
 #!/usr/bin/env python
-from guiqwt.tests import sift
+from plotpy.tests import sift
 sift.run()

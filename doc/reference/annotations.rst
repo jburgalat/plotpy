@@ -1,1 +1,1 @@
-.. automodule:: guiqwt.annotations
+.. automodule:: plotpy.annotations

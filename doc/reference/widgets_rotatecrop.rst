@@ -1,1 +1,1 @@
-.. automodule:: guiqwt.widgets.rotatecrop
+.. automodule:: plotpy.widgets.rotatecrop

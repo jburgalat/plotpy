@@ -1,1 +1,1 @@
-.. automodule:: guiqwt.image
+.. automodule:: plotpy.image

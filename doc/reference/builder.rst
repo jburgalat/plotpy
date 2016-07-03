@@ -1,1 +1,1 @@
-.. automodule:: guiqwt.builder
+.. automodule:: plotpy.builder

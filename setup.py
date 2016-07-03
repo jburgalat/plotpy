@@ -3,16 +3,16 @@
 # Copyright © 2009-2015 CEA
 # Pierre Raybaut
 # Licensed under the terms of the CECILL License
-# (see guiqwt/__init__.py for details)
+# (see plotpy/__init__.py for details)
 
 """
-guiqwt
+plotpy
 ======
 
 Copyright © 2009-2015 CEA
 Pierre Raybaut
 Licensed under the terms of the CECILL License
-(see guiqwt/__init__.py for details)
+(see plotpy/__init__.py for details)
 """
 
 # Building extensions:
@@ -33,17 +33,17 @@ from guidata.utils import get_subpackages, get_package_data, cythonize_all
 #      note: this directory doesn't exist for a default PyQt4 install
 
 
-LIBNAME = 'guiqwt'
-from guiqwt import __version__
-from guiqwt import __description__
+LIBNAME = 'plotpy'
+from plotpy import __version__
+from plotpy import __description__
 # Remove module from list to allow building doc from build dir
-del sys.modules['guiqwt']
+del sys.modules['plotpy']
 
 LONG_DESCRIPTION = """\
-guiqwt: Python tools for curve and image plotting
+plotpy: Python tools for curve and image plotting
 =================================================
 
-.. image:: http://pythonhosted.org/guiqwt/_images/panorama.png
+.. image:: http://pythonhosted.org/plotpy/_images/panorama.png
 
 See `documentation`_ for more details on the library and `changelog`_ for 
 recent history of changes.
@@ -51,17 +51,17 @@ recent history of changes.
 Copyright © 2009-2015 CEA, Pierre Raybaut, licensed under the terms of the 
 `CECILL License`_.
 
-.. _documentation: http://pythonhosted.org/guiqwt/
-.. _changelog: https://github.com/PierreRaybaut/guiqwt/blob/master/CHANGELOG.md
-.. _CECILL License: https://github.com/PierreRaybaut/guiqwt/blob/master/Licence_CeCILL_V2-en.txt
+.. _documentation: http://pythonhosted.org/plotpy/
+.. _changelog: https://github.com/PierreRaybaut/plotpy/blob/master/CHANGELOG.md
+.. _CECILL License: https://github.com/PierreRaybaut/plotpy/blob/master/Licence_CeCILL_V2-en.txt
 
 
 Overview
 --------
 
 Based on `PythonQwt`_ (a pure Python/PyQt reimplementation of the curve 
-plotting Qwt C++ library, included in guiqwt base source code) and on the 
-scientific modules NumPy and SciPy, ``guiqwt`` is a Python library providing 
+plotting Qwt C++ library, included in plotpy base source code) and on the 
+scientific modules NumPy and SciPy, ``plotpy`` is a Python library providing 
 efficient 2D data-plotting features (curve/image visualization and related 
 tools) for interactive computing and signal/image processing application 
 development. It is based on Qt graphical user interfaces library, and 
@@ -91,7 +91,7 @@ The following packages are **required**: `PyQt4`_ (or `PyQt5`_),
 
 See the `README`_ and `documentation`_ for more details.
 
-.. _README: https://github.com/PierreRaybaut/guiqwt/blob/master/README.md
+.. _README: https://github.com/PierreRaybaut/plotpy/blob/master/README.md
 """
 
 KEYWORDS = ''
@@ -153,7 +153,7 @@ def _create_script_list(basename):
         scripts.append('%s.bat' % scripts[0])
     return [osp.join('scripts', name) for name in scripts]
 
-SCRIPTS = _create_script_list('guiqwt-tests') + _create_script_list('sift')
+SCRIPTS = _create_script_list('plotpy-tests') + _create_script_list('sift')
 
 
 try:
@@ -205,9 +205,9 @@ setup(name=LIBNAME, version=__version__,
                         'DICOM':  ["pydicom>=0.9.3"],
                         },
       entry_points={'gui_scripts':
-                    ['guiqwt-tests-py%d = guiqwt.tests:run'\
+                    ['plotpy-tests-py%d = plotpy.tests:run'\
                      % sys.version_info.major,
-                     'sift-py%d = guiqwt.tests.sift:run'\
+                     'sift-py%d = plotpy.tests.sift:run'\
                      % sys.version_info.major,]},
       ext_modules=[Extension(LIBNAME+'.histogram2d',
                              [osp.join('src', 'histogram2d.c')],

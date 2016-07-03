@@ -1,1 +1,1 @@
-.. automodule:: guiqwt.signals
+.. automodule:: plotpy.signals

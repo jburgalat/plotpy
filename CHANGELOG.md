@@ -1,4 +1,4 @@
-# guiqwt Releases #
+# plotpy Releases #
 
 
 ### Version 3.0.2 ###
@@ -12,7 +12,7 @@ Bug fixes:
 
 Other changes:
 
-* Added a new demo [dotarraydemo.py](guiqwt/tests/dotarraydemo.py) showing how to create a custom item drawing an array of dots
+* Added a new demo [dotarraydemo.py](plotpy/tests/dotarraydemo.py) showing how to create a custom item drawing an array of dots
 * Documentation is now built into the "build/doctmp" directory, hence allowing to reuse the previous built doc from a package build to another
 * `plot.CurveWidgetMixin.create_plot` has now the same signature as its `ImageWidgetMixin` counterpart
 
@@ -58,7 +58,7 @@ Bug fixes:
 * Fixed Issue #42: update tools status after registering all curve/image tools
 * Fixed Issue #16: ImagePlot/rectangular zoom was ignoring aspect ratio
 * Fixed Issue #43: install_requires Pillow instead of PIL
-* Fixed Issue #46 (`guiqwt.io.imread`): fixed support for PNG images with transparency palette (Pillow)
+* Fixed Issue #46 (`plotpy.io.imread`): fixed support for PNG images with transparency palette (Pillow)
 * Images with integers: avoid overflows when computing LUT
 * Fixed Issue #50: 16-bit images were saved (io.imwrite) using the wrong PIL mode
   
@@ -80,7 +80,7 @@ Other changes:
   * Added support for writing DICOM files
   * Improved support for DICOM metadata
   * Added support for multiple images resizing
-* Updated py2exe example (switched to cxFreeze to show how it's done) following https://groups.google.com/group/guidata_guiqwt/browse_thread/thread/f8db01cf7149e964
+* Updated py2exe example (switched to cxFreeze to show how it's done) following https://groups.google.com/group/guidata_plotpy/browse_thread/thread/f8db01cf7149e964
 * Updated the build in place batch script: building on Windows with Ms Visual C++
 
 
@@ -89,7 +89,7 @@ Other changes:
 Bug fixes:
 
 * Fixed build failures occuring on non-Windows platforms (Issue 54)
-* Fixed requirements in README and setup.py: guiqwt v2.3 requires guidata v1.6
+* Fixed requirements in README and setup.py: plotpy v2.3 requires guidata v1.6
 
 
 ### Version 2.3.0 ###
@@ -99,15 +99,15 @@ New features:
 * Added support for Python 3: a single code source base compatible with both Python 2 and Python 3
 * `scaler` C++ extension: added alternative implementations of C99 features so that this extension is now compatible with Microsoft Visual C++ compiler (was only compatible with gcc)
 * Replaced all Fortran 77/90 extensions by Cython extensions:
-  * Building `guiqwt` no longer requires a Fortran compiler (but only a C/C++ compiler for the C++ scaler extension and the C Cython extensions)
+  * Building `plotpy` no longer requires a Fortran compiler (but only a C/C++ compiler for the C++ scaler extension and the C Cython extensions)
   * 2-D histogram items are drawn 3 times faster than before
   * The Mandelbrot example runs faster too
 
 Bug fixes:
 
-* `guiqwt.image_nanmin/_nanmax`: bug fixed when data is a numpy.ma.MaskedArray object
-* `guiqwt.styles`: using copy.deepcopy instead of copy.copy in `ItemParameters.get` to avoid side effects when using more than one instance of a DataSet object
-* `guiqwt.annotations`: fixed bug when showing an AnnotatedShape object on an empty plot (unit was None)
+* `plotpy.image_nanmin/_nanmax`: bug fixed when data is a numpy.ma.MaskedArray object
+* `plotpy.styles`: using copy.deepcopy instead of copy.copy in `ItemParameters.get` to avoid side effects when using more than one instance of a DataSet object
+* `plotpy.annotations`: fixed bug when showing an AnnotatedShape object on an empty plot (unit was None)
 * Fixed `PolygonShape` items pickle support (save_items, restore_items)
 
 
@@ -116,21 +116,21 @@ Bug fixes:
 New features:
 
 * Added support for plot items serialization/deserialization to/from HDF5:
-  * See `save_item`, `load_item`, `save_items` and `load_items` functions in `guiqwt.io`
+  * See `save_item`, `load_item`, `save_items` and `load_items` functions in `plotpy.io`
   * io.save_item/load_item (HDF5): None can be saved/loaded instead of a real item
   * See `serialize` (save to) and `deserialize` (load from) methods in plot objects (save all items) or plot item objects
   * See the new test `loadsaveitems_hdf5.py`
 * builder/images: added option 'center_on' to center image data on point of coordinates 'center_on' (tuple)
 * Flip/Rotate widget/dialog: added method 'set_parameters' to set default transform parameters
-* guiqwt.tools.SignalStatsTool.move: added X range to label
+* plotpy.tools.SignalStatsTool.move: added X range to label
 * BaseCurveWidget/BaseImageWidget: added argument `curve_antialiasing` to switch on/off the curve antialiasing feature (this option may be passed to CurveWidget, CurveDialog, ImageWidget or ImageDialog through the `options` dictionary)
 * (Issue 29) Added test 'customize_shape_tool.py' to demonstrate how easy it is to customize a shape created with a tool like RectangleTool, EllipseTool, etc.
 * (Issue 37) Plot axis widget: added support for mouse double-click to set the axis range
 
 Possible API compatibility issues:
 
-* guiqwt now requires Python 2.6 (Python 2.5 support has been dropped)
-* `guiqwt.io` module: file type filters are now sorted depending on data types
+* plotpy now requires Python 2.6 (Python 2.5 support has been dropped)
+* `plotpy.io` module: file type filters are now sorted depending on data types
   * `iohandler.load_filters` and `iohandler.save_filters` properties have been replaced by a method `iohandler.get_filters`:
     * iohandler.load_filter --> iohandler.get_filters('load')
     * iohandler.save_filter --> iohandler.get_filters('save')
@@ -158,7 +158,7 @@ Bug fixes:
 New features:
 
 * Added scaler module: resize function (using scaler C++ engine to resize images) which is incredibly faster than scipy.misc.imresize
-* `guiqwt.io` module was rewritten: new extensible I/O functions `imwrite`/`imread` (see section 'Possible API compatibility issues')
+* `plotpy.io` module was rewritten: new extensible I/O functions `imwrite`/`imread` (see section 'Possible API compatibility issues')
 * SelectTool:
   * added Undo/Redo actions (triggered by platform's standard key sequences)
   * "Select all" action is now triggered by platform's standard key sequence
@@ -166,8 +166,8 @@ New features:
 * Interactive tools: added argument 'switch_to_default_tool' (if True, when tool action is finished, plot manager will automatically switch to the default tool)
 * Added `label.RangeInfo` object: showing XRangeSelection shape informations (x, dx) in a label. See associated method 'range_info_label' in 'builder.make' singleton and unit test in 'tests/computations.py'.
 * Snapshot tool: added an option to apply (or not) the interpolation algorithm
-* `guiqwt.pyplot`: selecting default item type, hence allowing to use directly tools when there is only one curve/image without having to select it before
-* Added new guiqwt svg logo
+* `plotpy.pyplot`: selecting default item type, hence allowing to use directly tools when there is only one curve/image without having to select it before
+* Added new plotpy svg logo
 * Added new dialogs and widgets for manipulating (multiple) images:
   * Rotate&Crop dialog, widget and tool (+ test) for TrImageItem plot items
   * Flip&Rotate dialog and widget
@@ -178,7 +178,7 @@ New features:
 
 Possible API compatibility issues:
 
-* `guiqwt.io` module was rewritten -- potential API breaks:
+* `plotpy.io` module was rewritten -- potential API breaks:
   * `imagefile_to_array` --> `imread`
   * `array_to_imagefile` --> `imwrite`
   * `array_to_dicomfile` --> `imwrite`
@@ -186,12 +186,12 @@ Possible API compatibility issues:
   * `IMAGE_SAVE_FILTERS` --> `iohandler.save_filters`
   * `set_dynamic_range_from_dtype` --> `scale_data_to_dtype`
 
-* Created `guiqwt.widgets` package to regroup ResizeDialog and RotateCropDialog/Widget
-* Moved module `guiqwt.fit` to `guiqwt.widgets` package
+* Created `plotpy.widgets` package to regroup ResizeDialog and RotateCropDialog/Widget
+* Moved module `plotpy.fit` to `plotpy.widgets` package
 
 Bug fixes:
 
-* `guiqwt.geometry` : fixed zero division error in `compute_angle` function
+* `plotpy.geometry` : fixed zero division error in `compute_angle` function
 * Fixed minimum value for histogram display
 * Fixed Issue 16: use double precision for point baseclass
 * Fixed rounding error in image.assemble_imageitems: concerns the snapshot tool, and the new rotate/crop dialog box (Rotate/Crop dialog: added a specific test checking if exported image is exactly identical to the original image when the cropping rectangle has the same size and position as the image below -- see rotatecrop.py test script).
@@ -209,16 +209,16 @@ Bug fixes:
 
 Other changes:
 
-* guiqwt.pyplot.savefig:
+* plotpy.pyplot.savefig:
   * added support for all image types supported by Qt (JPEG, TIFF, PNG, ...)
   * first argument (`fname`) may now be a file-like object (e.g. StringIO)
-* guiqwt.baseplot/curve: added stepsize in `set_axis_limits` and removed from `set_axis_ticks`
-* guiqwt.image:
+* plotpy.baseplot/curve: added stepsize in `set_axis_limits` and removed from `set_axis_ticks`
+* plotpy.image:
   * QuadGridItem: allow set_data to update X,Y along with Z
   * new item PolygonMapItem: PolygonMapItem is intended to display maps i.e. items containing several hundreds of independent polygons
-* guiqwt.builder.make.error: added options 'errorbarwidth', 'errorbarcap', 'errorbarmode' and 'errorbaralpha' (avoid having to tweak the ErrorBarParam to customize these settings)
-* guiqwt.pyplot/pydicom: avoid the annoying warning message about the DICOM dictionnary revert
-* guiqwt.tools:
+* plotpy.builder.make.error: added options 'errorbarwidth', 'errorbarcap', 'errorbarmode' and 'errorbaralpha' (avoid having to tweak the ErrorBarParam to customize these settings)
+* plotpy.pyplot/pydicom: avoid the annoying warning message about the DICOM dictionnary revert
+* plotpy.tools:
   * EditItemDataTool: new tool for editing displayed curve/image data using a GUI-based array editor (this feature requires the `spyderlib` library)
 
 Bug fixes:
@@ -227,8 +227,8 @@ Bug fixes:
   * now handling NaNs uncertainties properly
   * handling runtime warnings that could end badly in draw method (example: transforming a zero in log scale)
 * Annotations/pickle bugfix: a QString (instead of unicode) was pickled for annotation title, hence leading to compatiblity issues with PyQt API v2
-* guiqwt.io.array_to_dicomfile: fixed value representation error for smallest/largest pixel value parameters
-* guiqwt.resizedialog.is_edit_valid: fixed compatibility issue with PyQt API v2
+* plotpy.io.array_to_dicomfile: fixed value representation error for smallest/largest pixel value parameters
+* plotpy.resizedialog.is_edit_valid: fixed compatibility issue with PyQt API v2
 * Sift: upgraded deployment script for compatibility with guidata v1.4+
 * geometry.colvector: fixed major regression in coordinates calculations (significative impact on TrImageItem related features)
 
@@ -237,13 +237,13 @@ Bug fixes:
 
 Other changes:
 
-* guiqwt.io: added function 'eliminate_outliers' to cut image levels histogram (previously available only for display)
+* plotpy.io: added function 'eliminate_outliers' to cut image levels histogram (previously available only for display)
 * baseplot: added method 'copy_to_clipboard' + tools: added CopyToClipboardTool (copy canevas window to clipboard)
 
 
 ### Version 2.1.4 ###
 
-Since this version, `guiqwt` is compatible with PyQt4 API #1 *and* API #2.
+Since this version, `plotpy` is compatible with PyQt4 API #1 *and* API #2.
 Please read carefully the coding guidelines which have been recently added to 
 the documentation.
 
@@ -258,7 +258,7 @@ Bug fixes:
 * image.XYImageItem (Contributor: Carlos Pascual): fixed bug when Y-axis array is of dimension Ni+1 (where Ni is the number of rows of the image pixel data array)
 * Fixed compatiblity issues with PyQt v4.4 (Contributor: Carlos Pascual)
 * (minor) Fixed label text (too long) of 2D-Histogram items background color in shown DataSet
-* guiqwt.io.array_to_dicomfile/bugfix: Smallest/LargestImagePixelValue fields had wrong type (str instead of int)
+* plotpy.io.array_to_dicomfile/bugfix: Smallest/LargestImagePixelValue fields had wrong type (str instead of int)
 * LabelTool: label was not moved as expected (default: now, label is *not* attached to canvas)
 * tools.ImageStatsTool/bugfix: image title was not shown
 * CurvePlot: autoscale for log scales / bugfix: handling zero values
@@ -271,7 +271,7 @@ Bug fixes:
 
 Possible API compatibility issues:
 
-* Moved functions from guiqwt.io to new module guiqwt.qthelpers: exec_image_save_dialog, exec_image_open_dialog, exec_images_open_dialog
+* Moved functions from plotpy.io to new module plotpy.qthelpers: exec_image_save_dialog, exec_image_open_dialog, exec_images_open_dialog
 * Markers:
   * label and constraint callbacks take now 2 arguments (the marker's coordinates) instead of 3
   * removed method 'move_point_to': use new method 'set_pos' instead (takes two arguments: x, y)
@@ -291,7 +291,7 @@ Possible API compatibility issues:
     * `get_angle` was renamed to `get_tr_angle`
     * `get_diameter` was renamed to `get_tr_diameter`
     * `get_length` was renamed to `get_tr_length`
-* Removed the following deprecated classes in `guiqwt.plot`:
+* Removed the following deprecated classes in `plotpy.plot`:
     * CurvePlotWidget (renamed to CurveWidget)
     * CurvePlotDialog (renamed to CurveDialog)
     * ImagePlotWidget (renamed to ImageWidget)
@@ -299,7 +299,7 @@ Possible API compatibility issues:
 
 Other changes:
 
-* Added module qthelpers: image open/save dialog helpers (moved from guiqwt.io to avoid using GUIs in this module)
+* Added module qthelpers: image open/save dialog helpers (moved from plotpy.io to avoid using GUIs in this module)
 * Annotation/default style: changed string formatting from '%d' to '%.1f'
 * baseplot.BasePlot.add_item: when adding the same item twice, printing a warning message
 * Using new guidata.qt PyQt4->PySide transitional package
@@ -338,7 +338,7 @@ Other changes:
 * annotations/attached label: added automatic axes unit support
 * annotations: added support for measurement relative uncertainty
 * fit/Fit param widgets: added suffix label + code cleaning
-* guiqwt.io/sift: open/save image dialog code refactoring
+* plotpy.io/sift: open/save image dialog code refactoring
 * tools.ExportItemDataTool: added support for images
 * Added tool ItemCenterTool: center objects (rectangle, ellipse and their annotated counterparts)
 * Cross section panel: when a cross section shape has been removed, clearing cross section curve before removing it (notify other panels)
@@ -355,7 +355,7 @@ Bug fixes:
 
 Other changes:
 
-* guiqwt.fit: code cleaning / reimplementing FitParam.create_widgets is now supported
+* plotpy.fit: code cleaning / reimplementing FitParam.create_widgets is now supported
 
 
 ### Version 2.1.1 ###
@@ -405,27 +405,27 @@ Bug fixes:
 * Image module: fixed pixel alignment issues (get_closest_indexes, ...)
 * TrImageParam: fixed wrong class inheritance
 * LegendBoxItem/bugfix: missing argument for include_item
-* guiqwt.image.get_filename: bugfix when filename is None
+* plotpy.image.get_filename: bugfix when filename is None
 * ErrorBarCurveItem.set_data: now accepts None for both dx and dy (interface consistency with its parent class, CurveItem)
 * Image items/Align rectangular shape to image pixels/bugfix: this feature was not working for scaled images (ImageItem, MaskImageItem, ...)
-* guiqwt.curve/image: improved autoscale method (now works with curves plotted on two different Y-axes)
-* guiqwt.image: fixed issues related to empty filename/data when pickling/unpickling items
+* plotpy.curve/image: improved autoscale method (now works with curves plotted on two different Y-axes)
+* plotpy.image: fixed issues related to empty filename/data when pickling/unpickling items
 * OpenFileTool: now remembers the previously browsed directory
 * Fixed PyQt >=v4.8 compatibility issue: PyQt is less permissive with signal string syntax (PyQt_PyObject is mandatory for passing a Python/C++ object)
-* guiqwt.fit: fixed rounding error due to slider's non-continuous behaviour
-* guiqwt.label/bugfix: text label was reset to '' when redrawn
-* guiqwt.fit: bugfixes when using logscale
-* guiqwt.io.array_to_imagefile/text files: format is now '%d' for integer data types
+* plotpy.fit: fixed rounding error due to slider's non-continuous behaviour
+* plotpy.label/bugfix: text label was reset to '' when redrawn
+* plotpy.fit: bugfixes when using logscale
+* plotpy.io.array_to_imagefile/text files: format is now '%d' for integer data types
 * (Fixes Issue 7) guifit: standard fit boundary excludes rightmost value
-* guiqwt/curve.py: added workaround to avoid division by zero when clicking between curves
-* guiqwt/io.py-array_to_dicomfile: fixed ambiguous VR for PixelData when changing DICOM data (forced to 'OB')
+* plotpy/curve.py: added workaround to avoid division by zero when clicking between curves
+* plotpy/io.py-array_to_dicomfile: fixed ambiguous VR for PixelData when changing DICOM data (forced to 'OB')
 * Bugfix: recent versions of PyQt don't like the QApplication reference to be stored in modules (why is that?)
 * Annotation/get_infos: fixed unicode error occuring with py2exe distribution only
 
 Possible API compatibility issues:
 
 * Panel interface: added mandatory method 'configure_panel' which is called just before adding the very first tool to the manager
-* baseplot: renamed guiqwt.baseplot.EnhancedQwtPlot to BasePlot
+* baseplot: renamed plotpy.baseplot.EnhancedQwtPlot to BasePlot
 
 Other changes:
 
@@ -441,36 +441,36 @@ Other changes:
 * ShapeParam: added attributes "private" and "readonly"
 * interfaces.IBasePlotItem: added argument 'ctrl=None' to 'move_local_point_to' (ctrl is True when 'Ctrl' button is pressed)
 * Ellipse/Circle shapes: when pressing 'Ctrl' button while resizing the shape, its center position will remain unchanged
-* guiqwt.plot: added classes CurveWindow/ImageWindow (derived from QMainWindow)
-* Added transitional package guiqwt.transitional (regroup all Qwt5 import statements)
+* plotpy.plot: added classes CurveWindow/ImageWindow (derived from QMainWindow)
+* Added transitional package plotpy.transitional (regroup all Qwt5 import statements)
 * BasePlot: added class attributes AXIS_IDS, AXIS_NAMES (removed AXES)
 * BasePlot: added methods 'set_axis_limits' and 'get_axis_limits'
 * BasePlot: added method 'set_axis_ticks' to set axis major tick step size or maximum number of major ticks and maximum of minor ticks
 * Cross section panels: added interface to handle the cross section curve data when updated
 * Panel widgets are now dockable
-* guiqwt.fit: code cleaning/refactoring + added FitWidget (similar to FitDialog but inherits directly from QWidget)
-* guiqwt.fit: fit params may now be changed as often as needed (the param widgets are reconstructed then)
-* guiqwt.fit: replaced set_fit_func and set_fit_params by set_fit_data (non sense to be setting one without the other)
+* plotpy.fit: code cleaning/refactoring + added FitWidget (similar to FitDialog but inherits directly from QWidget)
+* plotpy.fit: fit params may now be changed as often as needed (the param widgets are reconstructed then)
+* plotpy.fit: replaced set_fit_func and set_fit_params by set_fit_data (non sense to be setting one without the other)
 * Added vertical/horizontal cursor plot items (+ tools + cursor info label): see builder.make.vcursor, hcursor and info_cursor
 * Cross section panel: added button "auto refresh" (enabled by default) (e.g. may be disabled for large images)
 * Added signal SIG_MASK_CHANGED, emitted by plot when an image mask has changed
-* guiqwt.fit.FitWidget/FitDialog: now working with no fit param
-* guiqwt.signals.SIG_ITEM_REMOVED is now emitted by plot when an item is removed from the item list panel (as before) or using the delete item tool (new)
+* plotpy.fit.FitWidget/FitDialog: now working with no fit param
+* plotpy.signals.SIG_ITEM_REMOVED is now emitted by plot when an item is removed from the item list panel (as before) or using the delete item tool (new)
 * Cross section plot: added tool 'DeleteItemTool'
-* guiqwt.builder/scaled image items (ImageItem, RGBImageItem, ...): added option 'pixel_size' (alternative to xdata and ydata)
-* guiqwt.fit: added option 'param_cols' to regroup N fit parameters on each row
+* plotpy.builder/scaled image items (ImageItem, RGBImageItem, ...): added option 'pixel_size' (alternative to xdata and ydata)
+* plotpy.fit: added option 'param_cols' to regroup N fit parameters on each row
 * SnapshotTool: added options to add images together (instead of the default replace behavior) + bugfixes
 * Renamed signal_app.py to sift.py (Sifia -> Sift)
 * Sift: added support for image processing
 * Image levels histogram (contrast panel): replaced the 'remove first bin' feature by an intelligent Y-axis scaling
 * guifit: reorganized layout to gain some space + added option 'size_offset' to change param label's size
-* guiqwt.plot.CurveDialog: added attribute 'button_box' (reference to the QDialogButtonBox instance)
-* guiqwt.io: added open/save filedialog filters 'IMAGE_LOAD_FILTERS' (types supported by 'imagefile_to_array') and 'IMAGE_SAVE_FILTERS' (types supported by 'array_to_imagefile')
-* guiqwt.io: added support for "I;16B" images
+* plotpy.plot.CurveDialog: added attribute 'button_box' (reference to the QDialogButtonBox instance)
+* plotpy.io: added open/save filedialog filters 'IMAGE_LOAD_FILTERS' (types supported by 'imagefile_to_array') and 'IMAGE_SAVE_FILTERS' (types supported by 'array_to_imagefile')
+* plotpy.io: added support for "I;16B" images
 * Sift/added image operations (+ various bugfixes/enhancements): resize and rotate (90°, -90°, H/V flipping, arbritrarily rotation)
 * Sift: added run scripts + py2exe setup script + icon
 * PanelWidget: added class attributes PANEL_TITLE and PANEL_ICON
-* guiqwt.cross_section.CrossSectionItem: added method 'process_curve_data' (called when cross section data has changed instead of calling 'set_data' directly)
+* plotpy.cross_section.CrossSectionItem: added method 'process_curve_data' (called when cross section data has changed instead of calling 'set_data' directly)
 * Tools: added 'toolbar_id' argument to all tools deriving from CommandTool
 * setup.py: removed the hard-coded -msse2 compile flag --> added extra options --sse2 and --sse3 as a replacement
 * Added ImageStatsTool: show statistics on selected image item's rectangular area

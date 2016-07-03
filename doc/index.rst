@@ -1,10 +1,10 @@
-.. automodule:: guiqwt
+.. automodule:: plotpy
 
 .. only:: html and not htmlhelp
 
 	.. note::
 
-		Windows users may download the :download:`CHM Manual <../guiqwt.chm.zip>`.
+		Windows users may download the :download:`CHM Manual <../plotpy.chm.zip>`.
 
 		After downloading this file, you may see blank pages in the documentation. 
 		That's because Windows is blocking CHM files for security reasons. 

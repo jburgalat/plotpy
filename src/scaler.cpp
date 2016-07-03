@@ -3,7 +3,7 @@
   Copyright © 2009-2010 CEA
   Ludovic Aubry
   Licensed under the terms of the CECILL License
-  (see guiqwt/__init__.py for details)
+  (see plotpy/__init__.py for details)
 */
 #include <Python.h>
 #undef NO_IMPORT_ARRAY
@@ -98,7 +98,7 @@ struct LinearInterpolation {
       // The following couple of lines were commented out to avoid disabling 
       // the linear interpolation on image edges. Demonstrating the effect of 
       // this change is quite easy: just try to show a very small image 
-      // (e.g. 10x10) with guiqwt.pyplot.imshow for example.
+      // (e.g. 10x10) with plotpy.pyplot.imshow for example.
 //	if (nx==0||nx==src.nj-1) return (T)v;
 //	if (ny==0||ny==src.ni-1) return (T)v;
 

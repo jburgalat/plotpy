@@ -1,1 +1,1 @@
-.. automodule:: guiqwt.shapes
+.. automodule:: plotpy.shapes

@@ -1,1 +1,1 @@
-.. automodule:: guiqwt.io
+.. automodule:: plotpy.io

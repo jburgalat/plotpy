@@ -1,1 +1,1 @@
-.. automodule:: guiqwt.widgets.fit
+.. automodule:: plotpy.widgets.fit

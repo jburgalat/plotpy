@@ -3,7 +3,7 @@
   Copyright © 2010-2011 CEA
   Ludovic Aubry
   Licensed under the terms of the CECILL License
-  (see guiqwt/__init__.py for details)
+  (see plotpy/__init__.py for details)
 */
 #include <Python.h>
 #define NO_IMPORT_ARRAY

@@ -1,1 +1,1 @@
-.. automodule:: guiqwt.curve
+.. automodule:: plotpy.curve

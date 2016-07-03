@@ -2,7 +2,7 @@
 /*
   Copyright © 2009-2010 CEA
   Licensed under the terms of the CECILL License
-  (see guiqwt/__init__.py for details)
+  (see plotpy/__init__.py for details)
 */
 #ifndef __DEBUG_HPP__
 #define __DEBUG_HPP__

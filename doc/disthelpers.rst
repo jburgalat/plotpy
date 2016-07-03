@@ -8,20 +8,20 @@ programs which may be executed without requiring a Python installation.
 
 Making such an executable program may be a non trivial task when the script 
 dependencies include libraries with data or extensions, such as `PyQt4` or 
-`guidata` and `guiqwt`. This task has been considerably simplified thanks to 
+`plotpy`. This task has been considerably simplified thanks to 
 the helper functions provided by :py:mod:`guidata.disthelpers`.
 
 Example
 ~~~~~~~
 
-This example is included in `guiqwt` source package (see the 
+This example is included in `plotpy` source package (see the 
 ``deployment_example`` folder at source package root directory).
 
-Simple example script named ``simpledialog.pyw`` which is based on `guiqwt` 
+Simple example script named ``simpledialog.pyw`` which is based on `plotpy` 
 (and implicitely on `guidata`)::
 
-    from guiqwt.plot import ImageDialog
-    from guiqwt.builder import make
+    from plotpy.plot import ImageDialog
+    from plotpy.builder import make
     
     class VerySimpleDialog(ImageDialog):
         def set_data(self, data):
@@ -43,8 +43,8 @@ The ``create_exe.py`` script may be written as the following::
 
     from guidata import disthelpers as dh
     dist = dh.Distribution()
-    dist.setup('example', '1.0', 'guiqwt app example', 'simpledialog.pyw')
-    dist.add_modules('guidata', 'guiqwt')
+    dist.setup('example', '1.0', 'plotpy app example', 'simpledialog.pyw')
+    dist.add_modules('plotpy')
     dist.build_cx_freeze()  # use `build_py2exe` to use py2exe instead
 
 Make the Windows executable program by simply running the script::

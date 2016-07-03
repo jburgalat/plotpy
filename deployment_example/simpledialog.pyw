@@ -3,12 +3,12 @@
 # Copyright © 2009-2010 CEA
 # Pierre Raybaut
 # Licensed under the terms of the CECILL License
-# (see guiqwt/__init__.py for details)
+# (see plotpy/__init__.py for details)
 
 """Very simple dialog box"""
 
-from guiqwt.plot import ImageDialog
-from guiqwt.builder import make
+from plotpy.plot import ImageDialog
+from plotpy.builder import make
 
 class VerySimpleDialog(ImageDialog):
     def set_data(self, data):

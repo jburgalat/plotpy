@@ -3,8 +3,8 @@
 #
 # Setup script for distributing SIFT as a stand-alone executable
 # SIFT is the Signal and Image Filtering Tool
-# Simple signal and image processing application based on guiqwt and guidata
-# (see guiqwt/tests/sift.py)
+# Simple signal and image processing application based on plotpy and guidata
+# (see plotpy/tests/sift.py)
 
 """Create a stand-alone executable"""
 
@@ -14,7 +14,7 @@ except ImportError:
     raise ImportError("This script requires guidata 1.4+")
 
 # Importing modules to be bundled
-from guiqwt.tests import sift
+from plotpy.tests import sift
 
 
 def create_executable():
@@ -24,7 +24,7 @@ def create_executable():
                description="Signal and Image Filtering Tool",
                script="sift.pyw", target_name="sift.exe",
                target_dir="%s-%s" % ("Sift", sift.VERSION), icon="sift.ico")
-    dist.add_modules('guidata', 'guiqwt')
+    dist.add_modules('guidata', 'plotpy')
     try:
         import spyderlib
         spyderlib.add_to_distribution(dist)

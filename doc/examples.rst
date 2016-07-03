@@ -6,12 +6,12 @@ Examples
 The test launcher
 -----------------
 
-A lot of examples are available in the `guiqwt` test module ::
+A lot of examples are available in the `plotpy` test module ::
 
-    from guiqwt import tests
+    from plotpy import tests
     tests.run()
 
-The two lines above execute the `guiqwt test launcher`:
+The two lines above execute the `plotpy test launcher`:
 
 .. image:: images/screenshots/__init__.png
 
@@ -22,7 +22,7 @@ Curve plotting
 Basic curve plotting
 ~~~~~~~~~~~~~~~~~~~~
 
-.. literalinclude:: ../guiqwt/tests/plot.py
+.. literalinclude:: ../plotpy/tests/plot.py
    :start-after: SHOW
    :end-before: Workaround for Sphinx v0.6 bug: empty 'end-before' directive
 
@@ -31,7 +31,7 @@ Basic curve plotting
 Computations on curves
 ~~~~~~~~~~~~~~~~~~~~~~
 
-.. literalinclude:: ../guiqwt/tests/computations.py
+.. literalinclude:: ../plotpy/tests/computations.py
    :start-after: SHOW
    :end-before: Workaround for Sphinx v0.6 bug: empty 'end-before' directive
 
@@ -41,7 +41,7 @@ Computations on curves
 Curve fitting
 -------------
 
-.. literalinclude:: ../guiqwt/tests/fit.py
+.. literalinclude:: ../plotpy/tests/fit.py
    :start-after: SHOW
    :end-before: Workaround for Sphinx v0.6 bug: empty 'end-before' directive
 
@@ -54,7 +54,7 @@ Image visualization
 Image contrast adjustment
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. literalinclude:: ../guiqwt/tests/contrast.py
+.. literalinclude:: ../plotpy/tests/contrast.py
    :start-after: SHOW
    :end-before: Workaround for Sphinx v0.6 bug: empty 'end-before' directive
 
@@ -63,7 +63,7 @@ Image contrast adjustment
 Image cross-sections
 ~~~~~~~~~~~~~~~~~~~~
 
-.. literalinclude:: ../guiqwt/tests/cross_section.py
+.. literalinclude:: ../plotpy/tests/cross_section.py
    :start-after: SHOW
    :end-before: Workaround for Sphinx v0.6 bug: empty 'end-before' directive
 
@@ -74,7 +74,7 @@ Transformable images
 
 Affine transforms example on 3000x3000 images (real-time transforms):
 
-.. literalinclude:: ../guiqwt/tests/transform.py
+.. literalinclude:: ../plotpy/tests/transform.py
    :start-after: SHOW
    :end-before: Workaround for Sphinx v0.6 bug: empty 'end-before' directive
 
@@ -83,7 +83,7 @@ Affine transforms example on 3000x3000 images (real-time transforms):
 Image rectangular filter
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. literalinclude:: ../guiqwt/tests/imagefilter.py
+.. literalinclude:: ../plotpy/tests/imagefilter.py
    :start-after: SHOW
    :end-before: Workaround for Sphinx v0.6 bug: empty 'end-before' directive
 
@@ -96,7 +96,7 @@ Histograms
 2-D histogram
 ~~~~~~~~~~~~~
 
-.. literalinclude:: ../guiqwt/tests/hist2d.py
+.. literalinclude:: ../plotpy/tests/hist2d.py
    :start-after: SHOW
    :end-before: Workaround for Sphinx v0.6 bug: empty 'end-before' directive
 
@@ -109,7 +109,7 @@ Other examples
 Dot Array Demo
 ~~~~~~~~~~~~~~
 
-.. literalinclude:: ../guiqwt/tests/dotarraydemo.py
+.. literalinclude:: ../plotpy/tests/dotarraydemo.py
    :start-after: SHOW
    :end-before: Workaround for Sphinx v0.6 bug: empty 'end-before' directive
 
@@ -118,7 +118,7 @@ Dot Array Demo
 Image plot tools
 ~~~~~~~~~~~~~~~~
 
-.. literalinclude:: ../guiqwt/tests/image_plot_tools.py
+.. literalinclude:: ../plotpy/tests/image_plot_tools.py
    :start-after: SHOW
    :end-before: Workaround for Sphinx v0.6 bug: empty 'end-before' directive
 
@@ -127,7 +127,7 @@ Image plot tools
 Real-time Mandelbrot plotting
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. literalinclude:: ../guiqwt/tests/mandelbrot.py
+.. literalinclude:: ../plotpy/tests/mandelbrot.py
    :start-after: SHOW
    :end-before: Workaround for Sphinx v0.6 bug: empty 'end-before' directive
 
@@ -136,7 +136,7 @@ Real-time Mandelbrot plotting
 Simple application
 ~~~~~~~~~~~~~~~~~~
 
-.. literalinclude:: ../guiqwt/tests/simple_window.py
+.. literalinclude:: ../plotpy/tests/simple_window.py
    :start-after: SHOW
    :end-before: Workaround for Sphinx v0.6 bug: empty 'end-before' directive
 

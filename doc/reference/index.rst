@@ -1,7 +1,7 @@
 Reference
 =========
 
-guiqwt API:
+plotpy API:
 
 .. toctree::
     :maxdepth: 2

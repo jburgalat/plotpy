@@ -1,1 +1,1 @@
-.. automodule:: guiqwt.cross_section
+.. automodule:: plotpy.cross_section

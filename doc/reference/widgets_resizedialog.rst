@@ -1,1 +1,1 @@
-.. automodule:: guiqwt.widgets.resizedialog
+.. automodule:: plotpy.widgets.resizedialog

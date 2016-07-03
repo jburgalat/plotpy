@@ -1,1 +1,1 @@
-.. automodule:: guiqwt.styles
+.. automodule:: plotpy.styles

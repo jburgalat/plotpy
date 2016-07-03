@@ -2,19 +2,19 @@ Migrating from version 2 to version 3
 =====================================
 
 The main change between version 2 and version 3 is the basic plotting library 
-on which `guiqwt` is based on:
+on which `plotpy` is based on:
 
-  * `guiqwt` version 2: depends on `PyQwt`, the Python bindings to `Qwt` C++ 
+  * `plotpy` version 2: depends on `PyQwt`, the Python bindings to `Qwt` C++ 
     library -- only supports PyQt4.
 
-  * `guiqwt` version 3: depends on `PythonQwt`, a new library written from 
+  * `plotpy` version 3: depends on `PythonQwt`, a new library written from 
     scratch to continue supporting `Qwt` API through a pure Python 
     reimplementation of its main classes (`QwtPlot`, `QwtPlotItem`, 
     `QwtPlotCanvas`, ...) -- supports PyQt4, PyQt5 and PySide (PySide support 
     is theoretical: not tested).
 
 Another major change is the switch from old-style to new-style signals and 
-slots. The :py:mod:`guiqwt.signals` module is now empty because it used to 
+slots. The :py:mod:`plotpy.signals` module is now empty because it used to 
 collect strings for old-style signals: however, it still contains 
 documentation on available signals.
 
@@ -27,13 +27,13 @@ Switching from `PyQwt` to `PythonQwt` in your code::
 
     from qwt import QwtPlot  # PythonQwt (supports PyQt4, PyQt5 and eventually PySide)
 
-Switching from `guiqwt 2` to `guiqwt 3`::
+Switching from `plotpy 2` to `plotpy 3`::
 
     plot = get_plot_instance()  # plot is a QwtPlot instance
     
-    ## guiqwt 2:
-    from guiqwt.signals import SIG_ITEM_MOVED
+    ## plotpy 2:
+    from plotpy.signals import SIG_ITEM_MOVED
     plot.connect(plot, SIG_ITEM_MOVED, item_was_moved)
     
-    ## guiqwt 3:
+    ## plotpy 3:
     plot.SIG_ITEM_MOVED.connect(item_was_moved)

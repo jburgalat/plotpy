@@ -1,1 +1,1 @@
-.. automodule:: guiqwt.histogram
+.. automodule:: plotpy.histogram
