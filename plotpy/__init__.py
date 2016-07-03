@@ -19,11 +19,11 @@ External resources:
 
 .. _PyPI: https://pypi.python.org/pypi/plotpy
 .. _GitHub: https://github.com/PierreRaybaut/plotpy
-.. _GoogleGroup: http://groups.google.fr/group/guidata_plotpy
+.. _GoogleGroup: http://groups.google.fr/group/guidata_guiqwt
 """
 
 
-__version__ = '3.0.2'
+__version__ = '0.1.0'
 __description__ = 'plotpy is a set of tools for curve and image plotting '\
                   '(extension to PythonQwt)'
 

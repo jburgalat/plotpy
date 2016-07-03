@@ -51,4 +51,4 @@ External resources:
     * Help, support and discussions around the project: `GoogleGroup`_
 
 .. _GitHub: https://github.com/PierreRaybaut/plotpy
-.. _GoogleGroup: http://groups.google.fr/group/guidata_plotpy
+.. _GoogleGroup: http://groups.google.fr/group/guidata_guiqwt
