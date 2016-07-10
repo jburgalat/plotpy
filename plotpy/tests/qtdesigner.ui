@@ -29,12 +29,12 @@
   <customwidget>
    <class>ImageWidget</class>
    <extends>CurveWidget</extends>
-   <header>guiqwt.plot</header>
+   <header>plotpy.plot</header>
   </customwidget>
   <customwidget>
    <class>CurveWidget</class>
    <extends>QwtPlot</extends>
-   <header>guiqwt.plot</header>
+   <header>plotpy.plot</header>
   </customwidget>
  </customwidgets>
  <resources/>
