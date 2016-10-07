@@ -1140,7 +1140,11 @@ try:
             self.set_font(font)
             self.set_codecompletion_auto(True)
             self.set_calltips(True)
-            self.setup_completion(size=(300, 180), font=font)
+            try:
+                # Spyder 2
+                self.setup_completion(size=(300, 180), font=font)
+            except TypeError:
+                pass
             try:
                 self.traceback_available.connect(self.show_console)
             except AttributeError:
@@ -1151,7 +1155,6 @@ try:
             self.dockwidget.show()
 except ImportError:
     DockableConsole = None
-DockableConsole = None
 
 
 class SiftProxy(object):
