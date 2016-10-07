@@ -1119,7 +1119,12 @@ class DockableTabWidget(QTabWidget, DockableWidgetMixin):
 
 
 try:
-    from spyderlib.widgets.internalshell import InternalShell
+    try:
+        # Spyder 2
+        from spyderlib.widgets.internalshell import InternalShell
+    except ImportError:
+        # Spyder 3
+        from spyder.widgets.internalshell import InternalShell
     class DockableConsole(InternalShell, DockableWidgetMixin):
         LOCATION = Qt.BottomDockWidgetArea
         def __init__(self, parent, namespace, message, commands=[]):
@@ -1146,6 +1151,7 @@ try:
             self.dockwidget.show()
 except ImportError:
     DockableConsole = None
+DockableConsole = None
 
 
 class SiftProxy(object):
@@ -1228,7 +1234,7 @@ class MainWindow(QMainWindow):
         self.proc_menu = self.menuBar().addMenu(_("Processing"))
         self.proc_menu.aboutToShow.connect(self.update_proc_menu)
         
-        # Eventually add an internal console (requires 'spyderlib')
+        # Eventually add an internal console (requires 'spyder')
         self.sift_proxy = SiftProxy(self)
         if DockableConsole is None:
             self.console = None
@@ -1247,7 +1253,7 @@ class MainWindow(QMainWindow):
                 self.console.interpreter.widget_proxy.sig_new_prompt.connect(
                                             lambda txt: self.refresh_lists())
             except AttributeError:
-                print('sift: spyderlib is outdated', file=sys.stderr)
+                print('sift: spyder library is outdated', file=sys.stderr)
         
         # View menu
         self.view_menu = view_menu = self.createPopupMenu()

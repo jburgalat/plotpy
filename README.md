@@ -39,7 +39,7 @@ Extension to ``PythonQwt``:
 
 ### Optional modules
         
-- [spyderlib](https://pypi.python.org/pypi/spyder) 2.1+ for GUI-embedded console support
+- [spyder](https://pypi.python.org/pypi/spyder) 2.1+ or 3.0+ for GUI-embedded console support
 - [pydicom](https://pypi.python.org/pypi/pydicom) 0.9.3+ for DICOM I/O support
 
 

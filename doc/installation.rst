@@ -12,7 +12,7 @@ Requirements:
     * `NumPy`_, `SciPy`_ and `Pillow`_
     
 Optional Python modules:
-    * `spyderlib`_ 2.1 for Sift embedded Python console
+    * `spyderlib`_ 2.1 or `spyder`_ 3.0 for Sift embedded Python console
     * `pydicom`_ >=0.9.3 for DICOM files I/O features
 
 .. _PyQt4: https://pypi.python.org/pypi/PyQt4
@@ -23,6 +23,7 @@ Optional Python modules:
 .. _SciPy: https://pypi.python.org/pypi/SciPy
 .. _Pillow: https://pypi.python.org/pypi/Pillow
 .. _spyderlib: https://pypi.python.org/pypi/Spyder
+.. _spyder: https://pypi.python.org/pypi/Spyder
 .. _pydicom: https://pypi.python.org/pypi/pydicom
 
 Installation

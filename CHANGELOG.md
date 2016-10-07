@@ -80,7 +80,7 @@ Other changes:
   * Added support for writing DICOM files
   * Improved support for DICOM metadata
   * Added support for multiple images resizing
-* Updated py2exe example (switched to cxFreeze to show how it's done) following https://groups.google.com/group/guidata_plotpy/browse_thread/thread/f8db01cf7149e964
+* Updated py2exe example (switched to cxFreeze to show how it's done) following https://groups.google.com/group/guidata_guiqwt/browse_thread/thread/f8db01cf7149e964
 * Updated the build in place batch script: building on Windows with Ms Visual C++
 
 

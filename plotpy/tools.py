@@ -1945,7 +1945,12 @@ def edit_curve_data(item):
     else:
         x, y = item_data
         data = np.array([x, y]).T
-    from spyderlib.widgets.objecteditor import oedit
+    try:
+        # Spyder 2
+        from spyderlib.widgets.objecteditor import oedit
+    except ImportError:
+        # Spyder 3
+        from spyder.widgets.variableexplorer.objecteditor import oedit
     if oedit(data) is not None:
         if data.shape[1] > 2:
             if data.shape[1] == 3:
@@ -1963,11 +1968,16 @@ def edit_curve_data(item):
 
 def edit_image_data(item):
     """Edit image item data to file"""
-    from spyderlib.widgets.objecteditor import oedit
+    try:
+        # Spyder 2
+        from spyderlib.widgets.objecteditor import oedit
+    except ImportError:
+        # Spyder 3
+        from spyder.widgets.variableexplorer.objecteditor import oedit
     oedit(item.data)
 
 class EditItemDataTool(ItemManipulationBaseTool):
-    """Edit item data (requires `spyderlib`)"""
+    """Edit item data (requires `spyder`)"""
     TITLE = _("Edit data...")
     ICON = "arredit.png"
     def __init__(self, manager, toolbar_id=None):

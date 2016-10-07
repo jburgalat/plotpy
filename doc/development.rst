@@ -42,10 +42,10 @@ following recommendations should be followed:
 
 * do not use the PyQt-specific QFileDialog static methods (not present in Qt) 
   which were introduced in PyQt v4.6: `getOpenFileNameAndFilter`, 
-  `getOpenFileNamesAndFilter` and `getSaveFileNameAndFilter` (`guidata` 
+  `getOpenFileNamesAndFilter` and `getSaveFileNameAndFilter` (`plotpy` 
   provides wrappers around `QFileDialog` static methods handling the selected 
   filter which were taken from the `spyderlib` library (from module 
-  `spyderlib.qt.compat`): they are available in `guidata.qt.compat`)
+  `spyderlib.qt.compat`): they are available in `plotpy.qt.compat`)
 
 PyQt / PySide compatibility
 ---------------------------

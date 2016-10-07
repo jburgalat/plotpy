@@ -8,7 +8,7 @@ and ``guidata``.
 
 Note that `Sift` includes an embedded Python console to manipulate directly 
 the signal and image objects (see screenshot below) -- this feature requires 
-``spyderlib`` (successfully tested with `Spyder` v2.0.10 and v2.1.0dev).
+``spyder`` (successfully tested with `Spyder` v2.1 and v3.0).
 
 .. image:: images/screenshots/sift3.png
 
