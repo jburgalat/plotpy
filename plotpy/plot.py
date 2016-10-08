@@ -101,17 +101,17 @@ Reference
 
 import weakref
 
-from guidata.qt.QtGui import (QDialogButtonBox, QVBoxLayout, QGridLayout,
+from plotpy.qt.QtGui import (QDialogButtonBox, QVBoxLayout, QGridLayout,
                               QToolBar, QDialog, QHBoxLayout, QMenu,
                               QActionGroup, QSplitter, QSizePolicy,
                               QApplication, QWidget, QMainWindow)
-from guidata.qt.QtCore import Qt
-from guidata.qt import PYQT5
+from plotpy.qt.QtCore import Qt
+from plotpy.qt import PYQT5
 
-from guidata.configtools import get_icon
-from guidata.utils import assert_interfaces_valid
-from guidata.qthelpers import create_action
-from guidata.py3compat import is_text_string
+from plotpy.configtools import get_icon
+from plotpy.utils import assert_interfaces_valid
+from plotpy.qthelpers import create_action
+from plotpy.py3compat import is_text_string
 
 # Local imports
 from plotpy.config import _

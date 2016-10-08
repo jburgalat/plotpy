@@ -5,16 +5,16 @@
 # Licensed under the terms of the CECILL License
 # (see plotpy/__init__.py for details)
 
-"""Simple dialog box based on plotpy and guidata"""
+"""Simple dialog box based on plotpy and plotpy"""
 
 SHOW = True # Show test in GUI-based test launcher
 
 import scipy.ndimage
 
-from guidata.dataset.datatypes import DataSet
-from guidata.dataset.dataitems import StringItem, IntItem, ChoiceItem
-from guidata.dataset.qtwidgets import DataSetShowGroupBox, DataSetEditGroupBox
-from guidata.utils import update_dataset
+from plotpy.dataset.datatypes import DataSet
+from plotpy.dataset.dataitems import StringItem, IntItem, ChoiceItem
+from plotpy.dataset.qtwidgets import DataSetShowGroupBox, DataSetEditGroupBox
+from plotpy.utils import update_dataset
 
 from plotpy.config import _
 from plotpy.plot import ImageDialog
@@ -42,7 +42,7 @@ class FilterParam(DataSet):
     
 class ExampleDialog(ImageDialog):
     def __init__(self, wintitle=_("Example dialog box"),
-                 icon="guidata.svg", options=dict(show_contrast=True),
+                 icon="plotpy.svg", options=dict(show_contrast=True),
                  edit=False):
         self.filter_gbox = None
         self.data = None
@@ -98,7 +98,7 @@ class ExampleDialog(ImageDialog):
         self.show_data(data)
 
 if __name__ == "__main__":
-    from guidata import qapplication
+    from plotpy import qapplication
     _app = qapplication()
     dlg = ExampleDialog()
     dlg.exec_() # No need to call app.exec_: a dialog box has its own event loop

@@ -11,8 +11,8 @@ from __future__ import print_function
 
 SHOW = True # Show test in GUI-based test launcher
 
-from guidata.qt.QtCore import QRectF
-from guidata.qt.QtGui import QImage
+from plotpy.qt.QtCore import QRectF
+from plotpy.qt.QtGui import QImage
 
 import os
 import numpy as np
@@ -25,7 +25,7 @@ from plotpy import io
 DEFAULT_CHARS = "".join([chr(c) for c in range(32, 256)])
 
 def get_font_array(sz, chars=DEFAULT_CHARS):
-    from guidata.qt.QtGui import QFont, QPainter, QColor
+    from plotpy.qt.QtGui import QFont, QPainter, QColor
     font = QFont()
     font.setFixedPitch(True)
     font.setPixelSize(sz)
@@ -170,8 +170,8 @@ def test():
 
 if __name__ == "__main__":
     # -- Create QApplication
-    import guidata
-    _app = guidata.qapplication()
+    import plotpy
+    _app = plotpy.qapplication()
     # --    
     items = test()
     build_image(items)

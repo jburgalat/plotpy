@@ -41,11 +41,11 @@ Create a basic curve plotting widget:
     * before creating any widget, a `QApplication` must be instantiated (that 
       is a `Qt` internal requirement):
           
->>> import guidata
->>> app = guidata.qapplication()
+>>> import plotpy
+>>> app = plotpy.qapplication()
 
     * that is mostly equivalent to the following (the only difference is that 
-      the `guidata` helper function also installs the `Qt` translation 
+      the `plotpy` helper function also installs the `Qt` translation 
       corresponding to the system locale):
           
 >>> from PyQt4.QtGui import QApplication
@@ -105,15 +105,15 @@ from __future__ import with_statement, print_function
 import warnings
 import numpy as np
 
-from guidata.qt.QtGui import (QMenu, QListWidget, QListWidgetItem, QVBoxLayout,
+from plotpy.qt.QtGui import (QMenu, QListWidget, QListWidgetItem, QVBoxLayout,
                               QToolBar, QMessageBox, QBrush, QColor, QPen,
                               QPolygonF)
-from guidata.qt.QtCore import Qt, QPointF, QLineF, QRectF, Signal
+from plotpy.qt.QtCore import Qt, QPointF, QLineF, QRectF, Signal
 
-from guidata.utils import assert_interfaces_valid, update_dataset
-from guidata.configtools import get_icon, get_image_layout
-from guidata.qthelpers import create_action, add_actions
-from guidata.py3compat import is_text_string, maxsize
+from plotpy.utils import assert_interfaces_valid, update_dataset
+from plotpy.configtools import get_icon, get_image_layout
+from plotpy.qthelpers import create_action, add_actions
+from plotpy.py3compat import is_text_string, maxsize
 
 # Local imports
 from plotpy.transitional import (QwtPlotCurve, QwtPlotGrid, QwtPlotItem,

@@ -26,12 +26,12 @@ Reference
    :inherited-members:
 """
 
-from guidata.qt.QtGui import QLabel, QComboBox
+from plotpy.qt.QtGui import QLabel, QComboBox
 
 import numpy as np
 
-from guidata.qthelpers import create_toolbutton
-from guidata.configtools import get_icon
+from plotpy.qthelpers import create_toolbutton
+from plotpy.configtools import get_icon
 
 # Local imports
 from plotpy.config import _

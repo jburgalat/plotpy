@@ -38,8 +38,8 @@ def create_window():
 def test():
     """Test"""
     # -- Create QApplication
-    import guidata
-    _app = guidata.qapplication()
+    import plotpy
+    _app = plotpy.qapplication()
     # --
     filename = osp.join(osp.dirname(__file__), "brain.png")
     win = create_window()

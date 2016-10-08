@@ -17,8 +17,8 @@ from plotpy.builder import make
 def test():
     """Test"""
     # -- Create QApplication
-    import guidata
-    _app = guidata.qapplication()
+    import plotpy
+    _app = plotpy.qapplication()
     # --    
     filename = osp.join(osp.dirname(__file__), "brain.png")
     image = make.image(filename=filename, title="Original", colormap='gray')

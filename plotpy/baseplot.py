@@ -50,13 +50,13 @@ from __future__ import print_function
 import sys
 import numpy as np
 
-from guidata.qt.QtGui import (QSizePolicy, QColor, QPixmap, QPrinter,
+from plotpy.qt.QtGui import (QSizePolicy, QColor, QPixmap, QPrinter,
                               QApplication)
-from guidata.qt.QtCore import QSize, Qt, Signal
-from guidata.qt import PYQT5
+from plotpy.qt.QtCore import QSize, Qt, Signal
+from plotpy.qt import PYQT5
 
-from guidata.configtools import get_font
-from guidata.py3compat import to_text_string, is_text_string, maxsize
+from plotpy.configtools import get_font
+from plotpy.py3compat import to_text_string, is_text_string, maxsize
 
 # Local imports
 from plotpy.transitional import (QwtPlot, QwtLinearScaleEngine,
@@ -440,7 +440,7 @@ class BasePlot(QwtPlot):
             printer.setOutputFormat(QPrinter.PdfFormat)
             printer.setOrientation(QPrinter.Landscape)
             printer.setOutputFileName(fname)
-            printer.setCreator('guidata')
+            printer.setCreator('plotpy')
             self.print_(printer)
         elif fname.lower().endswith('.png'):
             if PYQT5:
@@ -594,7 +594,7 @@ class BasePlot(QwtPlot):
     def serialize(self, writer, selected=False):
         """
         Save (serializable) items to HDF5 file:
-            * writer: :py:class:`guidata.hdf5io.HDF5Writer` object
+            * writer: :py:class:`plotpy.hdf5io.HDF5Writer` object
             * selected=False: if True, will save only selected items
             
         See also :py:meth:`plotpy.baseplot.BasePlot.restore_items_from_hdf5`
@@ -609,7 +609,7 @@ class BasePlot(QwtPlot):
     def deserialize(self, reader):
         """
         Restore items from HDF5 file:
-            * reader: :py:class:`guidata.hdf5io.HDF5Reader` object
+            * reader: :py:class:`plotpy.hdf5io.HDF5Reader` object
             
         See also :py:meth:`plotpy.baseplot.BasePlot.save_items_to_hdf5`
         """

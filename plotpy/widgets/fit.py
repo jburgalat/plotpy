@@ -43,21 +43,21 @@ Reference
 
 from __future__ import division, print_function
 
-from guidata.qt.QtGui import (QGridLayout, QLabel, QSlider, QPushButton,
+from plotpy.qt.QtGui import (QGridLayout, QLabel, QSlider, QPushButton,
                               QLineEdit, QDialog, QVBoxLayout, QHBoxLayout,
                               QWidget, QDialogButtonBox)
-from guidata.qt.QtCore import Qt
-from guidata.qt import PYQT5
+from plotpy.qt.QtCore import Qt
+from plotpy.qt import PYQT5
 
 import numpy as np
 from numpy import inf # Do not remove this import (used by optimization funcs)
 
-import guidata
-from guidata.utils import update_dataset, restore_dataset
-from guidata.qthelpers import create_groupbox
-from guidata.configtools import get_icon
-from guidata.dataset.datatypes import DataSet
-from guidata.dataset.dataitems import (StringItem, FloatItem, IntItem,
+import plotpy
+from plotpy.utils import update_dataset, restore_dataset
+from plotpy.qthelpers import create_groupbox
+from plotpy.configtools import get_icon
+from plotpy.dataset.datatypes import DataSet
+from plotpy.dataset.dataitems import (StringItem, FloatItem, IntItem,
                                        ChoiceItem, BoolItem)
 
 # Local imports
@@ -586,7 +586,7 @@ def guifit(x, y, fitfunc, fitparams, fitargs=None, fitkwargs=None,
            wintitle=None, title=None, xlabel=None, ylabel=None,
            param_cols=1, auto_fit=True, winsize=None, winpos=None):
     """GUI-based curve fitting tool"""
-    _app = guidata.qapplication()
+    _app = plotpy.qapplication()
 #    win = FitWidget(wintitle=wintitle, toolbar=True,
 #                    param_cols=param_cols, auto_fit=auto_fit,
 #                    options=dict(title=title, xlabel=xlabel, ylabel=ylabel))

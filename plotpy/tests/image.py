@@ -108,8 +108,8 @@ def compute_image_3():
 def test():
     """Test"""
     # -- Create QApplication
-    import guidata
-    _app = guidata.qapplication()
+    import plotpy
+    _app = plotpy.qapplication()
     # --
     for func in (compute_image, compute_image_2, compute_image_3):
         img = func()

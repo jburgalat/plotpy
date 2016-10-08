@@ -32,8 +32,8 @@ def imshow(x, y, data, filter_area, yreverse=True):
 def test():
     """Test"""
     # -- Create QApplication
-    import guidata
-    _app = guidata.qapplication()
+    import plotpy
+    _app = plotpy.qapplication()
     # --
     from plotpy.tests.imagexy import compute_image
     x, y, data = compute_image()

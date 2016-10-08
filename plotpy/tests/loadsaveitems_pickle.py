@@ -14,7 +14,7 @@ SHOW = True # Show test in GUI-based test launcher
 # WARNING:
 # This script requires read/write permissions on current directory
 
-from guidata.qt.QtGui import QFont
+from plotpy.qt.QtGui import QFont
 
 import os
 import os.path as osp
@@ -117,7 +117,7 @@ class PickleTest(IOTest):
     
 
 if __name__ == "__main__":
-    import guidata
-    _app = guidata.qapplication()
+    import plotpy
+    _app = plotpy.qapplication()
     test = PickleTest()
     test.run()

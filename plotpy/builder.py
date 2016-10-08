@@ -20,11 +20,11 @@ Example
 Before creating any widget, a `QApplication` must be instantiated 
 (that is a `Qt` internal requirement):
           
->>> import guidata
->>> app = guidata.qapplication()
+>>> import plotpy
+>>> app = plotpy.qapplication()
 
 that is mostly equivalent to the following (the only difference is that 
-the `guidata` helper function also installs the `Qt` translation 
+the `plotpy` helper function also installs the `Qt` translation 
 corresponding to the system locale):
           
 >>> from PyQt4.QtGui import QApplication
@@ -58,7 +58,7 @@ Reference
 
 import os.path as osp
 from numpy import arange, array, zeros, meshgrid, ndarray
-from guidata.py3compat import is_text_string
+from plotpy.py3compat import is_text_string
 
 # Local imports
 from plotpy.config import _, CONF, make_title

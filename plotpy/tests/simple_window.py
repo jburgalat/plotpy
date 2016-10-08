@@ -5,25 +5,25 @@
 # Licensed under the terms of the CECILL License
 # (see plotpy/__init__.py for details)
 
-"""Simple application based on plotpy and guidata"""
+"""Simple application based on plotpy and plotpy"""
 
 SHOW = True # Show test in GUI-based test launcher
 
-from guidata.qt.QtGui import QMainWindow, QMessageBox, QSplitter, QListWidget
-from guidata.qt.QtCore import QSize, QT_VERSION_STR, PYQT_VERSION_STR, Qt
-from guidata.qt.compat import getopenfilename
+from plotpy.qt.QtGui import QMainWindow, QMessageBox, QSplitter, QListWidget
+from plotpy.qt.QtCore import QSize, QT_VERSION_STR, PYQT_VERSION_STR, Qt
+from plotpy.qt.compat import getopenfilename
 
 import sys, platform
 import numpy as np
 
-from guidata.dataset.datatypes import DataSet, GetAttrProp
-from guidata.dataset.dataitems import (IntItem, FloatArrayItem, StringItem,
+from plotpy.dataset.datatypes import DataSet, GetAttrProp
+from plotpy.dataset.dataitems import (IntItem, FloatArrayItem, StringItem,
                                        ChoiceItem)
-from guidata.dataset.qtwidgets import DataSetEditGroupBox
-from guidata.configtools import get_icon
-from guidata.qthelpers import create_action, add_actions, get_std_icon
-from guidata.utils import update_dataset
-from guidata.py3compat import to_text_string
+from plotpy.dataset.qtwidgets import DataSetEditGroupBox
+from plotpy.configtools import get_icon
+from plotpy.qthelpers import create_action, add_actions, get_std_icon
+from plotpy.utils import update_dataset
+from plotpy.py3compat import to_text_string
 
 from plotpy.config import _
 from plotpy.plot import ImageWidget
@@ -231,7 +231,7 @@ class MainWindow(QMainWindow):
             self.mainwidget.add_image_from_file(filename)
         
 if __name__ == '__main__':
-    from guidata import qapplication
+    from plotpy import qapplication
     app = qapplication()
     window = MainWindow()
     window.show()

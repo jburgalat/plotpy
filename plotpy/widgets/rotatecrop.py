@@ -26,7 +26,7 @@ Reference
    :inherited-members:
 """
 
-from guidata.qt.QtGui import QCheckBox
+from plotpy.qt.QtGui import QCheckBox
 
 # Local imports
 from plotpy.config import _

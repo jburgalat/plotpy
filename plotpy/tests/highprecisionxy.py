@@ -13,8 +13,8 @@ def xyimagebug(offset):
     from plotpy.plot import ImageDialog
     from plotpy.builder import make
     import numpy
-    import guidata
-    app = guidata.qapplication()
+    import plotpy
+    app = plotpy.qapplication()
     data = numpy.random.rand(100, 100)
     x = numpy.arange(100)+offset 
     y = numpy.arange(100)

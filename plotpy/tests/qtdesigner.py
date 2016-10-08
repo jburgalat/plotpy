@@ -17,7 +17,7 @@ SHOW = True # Show test in GUI-based test launcher
 
 import sys, os.path as osp
 
-from guidata.qt.QtGui import QApplication
+from plotpy.qt.QtGui import QApplication
 from plotpy.qtdesigner import loadui
 from plotpy.builder import make
 

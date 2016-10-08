@@ -11,7 +11,7 @@ SHOW = True # Show test in GUI-based test launcher
 
 import os.path as osp
 
-from guidata.qt.QtGui import QMainWindow, QWidget, QGridLayout
+from plotpy.qt.QtGui import QMainWindow, QWidget, QGridLayout
 
 from plotpy.image import ImagePlot
 from plotpy.curve import PlotItemList
@@ -71,8 +71,8 @@ class Window(QMainWindow):
 def test():
     """Test"""
     # -- Create QApplication
-    import guidata
-    app = guidata.qapplication()
+    import plotpy
+    app = plotpy.qapplication()
     # --    
     win = Window()
     win.show()

@@ -12,7 +12,7 @@ Requires pydicom (>=0.9.3)"""
 SHOW = True # Show test in GUI-based test launcher
 
 import os.path as osp
-import guidata
+import plotpy
 from plotpy.plot import ImageDialog
 from plotpy.builder import make
 
@@ -30,6 +30,6 @@ def test():
     return win
 
 if __name__ == "__main__":
-    _app = guidata.qapplication()
+    _app = plotpy.qapplication()
     win = test()
     win.exec_()

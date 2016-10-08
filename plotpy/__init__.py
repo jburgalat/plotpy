@@ -19,7 +19,7 @@ External resources:
 
 .. _PyPI: https://pypi.python.org/pypi/plotpy
 .. _GitHub: https://github.com/PierreRaybaut/plotpy
-.. _GoogleGroup: http://groups.google.fr/group/guidata_guiqwt
+.. _GoogleGroup: http://groups.google.fr/group/plotpy_guiqwt
 """
 
 
@@ -27,31 +27,60 @@ __version__ = '0.1.0'
 __description__ = 'plotpy is a set of tools for curve and image plotting '\
                   '(extension to PythonQwt)'
 
+import plotpy.config
+
+def qapplication():
+    """
+    Return QApplication instance
+    Creates it if it doesn't already exist
+    """
+    from plotpy.qt.QtGui import QApplication
+    app = QApplication.instance()
+    if not app:
+        app = QApplication([])
+    install_translator(app)
+    return app
+
+QT_TRANSLATOR = None
+def install_translator(qapp):
+    """Install Qt translator to the QApplication instance"""
+    global QT_TRANSLATOR
+    if QT_TRANSLATOR is None:
+        from plotpy.qt.QtCore import QLocale, QTranslator, QLibraryInfo
+        locale = QLocale.system().name()
+        # Qt-specific translator
+        qt_translator = QTranslator()
+        paths = QLibraryInfo.location(QLibraryInfo.TranslationsPath)
+        if qt_translator.load("qt_"+locale, paths):
+            QT_TRANSLATOR = qt_translator # Keep reference alive
+    if QT_TRANSLATOR is not None:
+        qapp.installTranslator(QT_TRANSLATOR)
+                  
 def about(html=True, copyright_only=False):
     """Return text about this package"""
-    import sys, os, os.path as osp, platform, guidata, plotpy, qwt
+    import sys, os, os.path as osp, platform, plotpy, qwt
     from plotpy.config import _
-    from guidata.qt.QtCore import QT_VERSION_STR, PYQT_VERSION_STR
+    from plotpy.qt.QtCore import QT_VERSION_STR, PYQT_VERSION_STR
     name = __file__.split(osp.sep)[-2]
     tf1 = (name, __version__, __description__)
     tf2 = (platform.python_version(),
            '64 bits' if sys.maxsize > 2**32 else '32 bits',
            QT_VERSION_STR, PYQT_VERSION_STR,
-           qwt.__version__, guidata.__version__, plotpy.__version__,
+           qwt.__version__, plotpy.__version__,
            _("on"), platform.system())
     if html:
         short_desc = "This widget is powered by <b>%s</b> v%s"\
                      "<p>%s<p>Created by Pierre Raybaut" % tf1
         desc = "Copyright &copy; 2010-2016 CEA"\
                "<p>Python %s %s, Qt %s, PyQt %s, "\
-               "PythonQwt %s, guidata %s, plotpy %s %s %s" % tf2
+               "PythonQwt %s, plotpy %s %s %s" % tf2
         if not copyright_only:
             desc = short_desc + "<br>" + desc
     else:
         short_desc = """%s v%s : %s
 Created by Pierre Raybaut""" % tf1
         desc = """Copyright (c) 2010-2016 CEA
-Python %s %s, Qt %s, PyQt %s, PythonQwt %s, guidata %s, plotpy %s %s %s""" % tf2
+Python %s %s, Qt %s, PyQt %s, PythonQwt %s, plotpy %s %s %s""" % tf2
         if not copyright_only:
             desc = short_desc + os.linesep + desc
     return desc

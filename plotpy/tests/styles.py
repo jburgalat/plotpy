@@ -11,16 +11,16 @@ SHOW = False # Do not show test in GUI-based test launcher
 
 import unittest
 
-from guidata.qt.QtCore import Qt, QSize
-from guidata.qt.QtGui import QPen, QBrush
+from plotpy.qt.QtCore import Qt, QSize
+from plotpy.qt.QtGui import QPen, QBrush
 
 from plotpy.transitional import QwtSymbol
 
-from guidata.config import UserConfig, _
+from plotpy.config import UserConfig, _
 from plotpy.styles import SymbolParam, LineStyleParam
 
 CONF = UserConfig({})
-CONF.set_application('guidata', version='0.0.0', load=False )
+CONF.set_application('plotpy', version='0.0.0', load=False )
 
 
 class TestSymbol(unittest.TestCase):

@@ -47,11 +47,11 @@ Create a basic image plotting widget:
     * before creating any widget, a `QApplication` must be instantiated (that
       is a `Qt` internal requirement):
 
->>> import guidata
->>> app = guidata.qapplication()
+>>> import plotpy
+>>> app = plotpy.qapplication()
 
     * that is mostly equivalent to the following (the only difference is that
-      the `guidata` helper function also installs the `Qt` translation
+      the `plotpy` helper function also installs the `Qt` translation
       corresponding to the system locale):
 
 >>> from PyQt4.QtGui import QApplication
@@ -148,11 +148,11 @@ from math import fabs
 
 import numpy as np
 
-from guidata.qt.QtGui import QColor, QImage
-from guidata.qt.QtCore import QRectF, QPointF, QRect
+from plotpy.qt.QtGui import QColor, QImage
+from plotpy.qt.QtCore import QRectF, QPointF, QRect
 
-from guidata.utils import assert_interfaces_valid, update_dataset
-from guidata.py3compat import getcwd, is_text_string
+from plotpy.utils import assert_interfaces_valid, update_dataset
+from plotpy.py3compat import getcwd, is_text_string
 
 # Local imports
 from plotpy.transitional import QwtPlotItem, QwtInterval
@@ -683,7 +683,7 @@ class BaseImageItem(QwtPlotItem):
             return [0,], [0, 1]
         if self.histogram_cache is None \
            or nbins != self.histogram_cache[0].shape[0]:
-            #from guidata.utils import tic, toc
+            #from plotpy.utils import tic, toc
             if True:
                 #tic("histo1")
                 res = np.histogram(self.data, nbins)

@@ -15,10 +15,10 @@ of Qt Objects).
 
 from __future__ import print_function
 
-from guidata.qt.QtGui import QImage, QInputEvent
-from guidata.qt.QtCore import Qt, QEvent
+from plotpy.qt.QtGui import QImage, QInputEvent
+from plotpy.qt.QtCore import Qt, QEvent
 
-from guidata.py3compat import io
+from plotpy.py3compat import io
 
 def buttons_to_str(buttons):
     """Conversion des flags Qt en chaine"""

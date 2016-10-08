@@ -12,7 +12,7 @@ SHOW = True # Show test in GUI-based test launcher
 # WARNING:
 # This script requires read/write permissions on current directory
 
-from guidata.hdf5io import HDF5Reader, HDF5Writer
+from plotpy.hdf5io import HDF5Reader, HDF5Writer
 
 from plotpy.tests.loadsaveitems_pickle import IOTest
 
@@ -31,7 +31,7 @@ class HDF5Test(IOTest):
 
 
 if __name__ == "__main__":
-    import guidata
-    _app = guidata.qapplication()
+    import plotpy
+    _app = plotpy.qapplication()
     test = HDF5Test()
     test.run()

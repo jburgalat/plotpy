@@ -33,7 +33,7 @@ def dialog_test(fname, interactive=True):
 
 
 if __name__ == '__main__':
-    from guidata import qapplication
+    from plotpy import qapplication
     qapp = qapplication()  # analysis:ignore
     
     widget_test("brain.png", qapp)

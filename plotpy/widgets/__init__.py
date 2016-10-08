@@ -3,7 +3,7 @@
 # Copyright © 2012 CEA
 # Pierre Raybaut
 # Licensed under the terms of the CECILL License
-# (see guidata/__init__.py for details)
+# (see plotpy/__init__.py for details)
 
 """
 plotpy.widgets

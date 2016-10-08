@@ -85,6 +85,6 @@ def test():
     win.exec_()
 
 if __name__ == '__main__':
-    import guidata
-    app = guidata.qapplication()
+    import plotpy
+    app = plotpy.qapplication()
     test()

@@ -14,10 +14,8 @@ The `config` module handles `plotpy` configuration (options, images and icons).
 
 import os.path as osp
 
-from guidata.configtools import add_image_module_path, get_translation
-
-
-_ = get_translation( "plotpy" )
+from plotpy.configtools import add_image_module_path, get_translation
+from plotpy.userconfig import UserConfig
 
 
 def make_title(basename, count):
@@ -27,8 +25,35 @@ def make_title(basename, count):
 
 APP_PATH = osp.dirname(__file__)
 add_image_module_path( "plotpy", "images" )
+_ = get_translation( "plotpy" )
 
 DEFAULTS = {
+            'arrayeditor':
+             {
+              'font/family/nt': ['Consolas', 'Courier New'],
+              'font/family/posix': 'Bitstream Vera Sans Mono',
+              'font/family/mac': 'Monaco',
+              'font/size': 9,
+              'font/bold': False,
+              },
+             'dicteditor':
+             {
+              'font/family/nt': ['Consolas', 'Courier New'],
+              'font/family/posix': 'Bitstream Vera Sans Mono',
+              'font/family/mac': 'Monaco',
+              'font/size': 9,
+              'font/italic': False,
+              'font/bold': False,
+             },
+             'texteditor':
+             {
+              'font/family/nt': ['Consolas', 'Courier New'],
+              'font/family/posix': 'Bitstream Vera Sans Mono',
+              'font/family/mac': 'Monaco',
+              'font/size': 9,
+              'font/italic': False,
+              'font/bold': False,
+             },
             'plot':
              {
               "selection/distance": 6,
@@ -771,5 +796,4 @@ DEFAULTS = {
               
             }
 
-from guidata.config import CONF
-CONF.update_defaults(DEFAULTS)
+CONF = UserConfig(DEFAULTS)

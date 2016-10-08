@@ -69,8 +69,8 @@ def compute_quads3():
 def test():
     """Test"""
     # -- Create QApplication
-    import guidata
-    _app = guidata.qapplication()
+    import plotpy
+    _app = plotpy.qapplication()
     # --
     items = compute_quads()+compute_quads3()
     imshow(items)

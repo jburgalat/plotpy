@@ -13,7 +13,7 @@ plotpy test package
 def run():
     """Run plotpy test launcher"""
     import plotpy.config # Loading icons
-    from guidata.guitest import run_testlauncher
+    from plotpy.guitest import run_testlauncher
     run_testlauncher(plotpy)
 
 if __name__ == '__main__':

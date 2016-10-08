@@ -20,7 +20,7 @@ class VerySimpleDialog(ImageDialog):
 
 if __name__ == "__main__":
     import numpy as np
-    from guidata import qapplication
+    from plotpy import qapplication
     _app = qapplication()
     dlg = VerySimpleDialog()
     dlg.set_data(np.random.rand(100, 100))

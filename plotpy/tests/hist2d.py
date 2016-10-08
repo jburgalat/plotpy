@@ -31,8 +31,8 @@ def hist2d(X, Y):
     win.exec_()
 
 if __name__ == "__main__":
-    import guidata
-    _app = guidata.qapplication()
+    import plotpy
+    _app = plotpy.qapplication()
     N = 150000
     m = array([[ 1., .2], [-.2, 3.]])
     X1 = random.normal(0, .3, size=(N, 2))

@@ -10,14 +10,14 @@ filtertest1.py + plot manager"""
 
 SHOW = True # Show test in GUI-based test launcher
 
-from guidata.qt.QtGui import (QWidget, QVBoxLayout, QHBoxLayout, QPushButton,
+from plotpy.qt.QtGui import (QWidget, QVBoxLayout, QHBoxLayout, QPushButton,
                               QMainWindow)
 
 #---Import plot widget base class
 from plotpy.curve import CurvePlot
 from plotpy.plot import PlotManager
 from plotpy.builder import make
-from guidata.configtools import get_icon
+from plotpy.configtools import get_icon
 #---
 
 class FilterTestWidget(QWidget):
@@ -98,7 +98,7 @@ class TestWindow(QMainWindow):
 
 def test():
     """Testing this simple Qt/plotpy example"""
-    from guidata.qt.QtGui import QApplication
+    from plotpy.qt.QtGui import QApplication
     import numpy as np
     import scipy.signal as sps, scipy.ndimage as spi
     

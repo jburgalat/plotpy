@@ -3,7 +3,7 @@
 # Copyright © 2010 CEA
 # Ludovic Aubry
 # Licensed under the terms of the CECILL License
-# (see guidata/__init__.py for details)
+# (see plotpy/__init__.py for details)
 
 """Internal test related to pcolor feature"""
 

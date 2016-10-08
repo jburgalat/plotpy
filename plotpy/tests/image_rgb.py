@@ -3,7 +3,7 @@
 # Copyright © 2009-2010 CEA
 # Pierre Raybaut
 # Licensed under the terms of the CECILL License
-# (see guidata/__init__.py for details)
+# (see plotpy/__init__.py for details)
 
 """RGB Image test, creating the RGBImageItem object via make.rgbimage"""
 
@@ -29,8 +29,8 @@ def imshow(filename):
 def test():
     """Test"""
     # -- Create QApplication
-    import guidata
-    _app = guidata.qapplication()
+    import plotpy
+    _app = plotpy.qapplication()
     # --
     imshow(IMGFILE)
 

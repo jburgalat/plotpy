@@ -3,7 +3,7 @@
 # Copyright © 2010 CEA
 # Ludovic Aubry
 # Licensed under the terms of the CECILL License
-# (see guidata/__init__.py for details)
+# (see plotpy/__init__.py for details)
 
 """CurvePlotDialog test"""
 
@@ -16,7 +16,7 @@
 
 SHOW = False # Show test in GUI-based test launcher
 
-from guidata.qt.QtGui import QFont
+from plotpy.qt.QtGui import QFont
 
 from plotpy.baseplot import BasePlot
 from plotpy.plot import CurveDialog, CurveWidget, PlotManager
@@ -63,8 +63,8 @@ def plot(items1, items2, items3, items4):
 def test():
     """Test"""
     # -- Create QApplication
-    import guidata
-    _app = guidata.qapplication()
+    import plotpy
+    _app = plotpy.qapplication()
     # --
     from numpy import linspace, sin
     x = linspace(-10, 10, 200)

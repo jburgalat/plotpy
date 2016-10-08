@@ -8,7 +8,7 @@
 """Compile new translations for this module
 must be run from toplevel directory !
 """
-from guidata.gettext_helpers import do_compile
+from plotpy.gettext_helpers import do_compile
 
 if __name__ == "__main__":
     do_compile("plotpy")

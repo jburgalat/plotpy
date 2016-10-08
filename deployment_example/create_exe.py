@@ -4,10 +4,10 @@
 Deployment example
 ==================
 
-Deployment script using `guidata.disthelpers` (py2exe or cx_Freeze)
+Deployment script using `plotpy.disthelpers` (py2exe or cx_Freeze)
 """
 
-from guidata import disthelpers as dh
+from plotpy import disthelpers as dh
 
 def create_exe():
     dist = dh.Distribution()

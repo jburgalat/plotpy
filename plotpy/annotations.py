@@ -72,7 +72,7 @@ from __future__ import unicode_literals
 
 import numpy as np
 
-from guidata.utils import update_dataset, assert_interfaces_valid
+from plotpy.utils import update_dataset, assert_interfaces_valid
 
 # Local imports
 from plotpy.config import CONF, _

@@ -103,15 +103,15 @@ Reference
 from __future__ import print_function
 
 import sys
-from guidata.qt.QtGui import (QMainWindow, QPrinter, QPainter, QFrame,
+from plotpy.qt.QtGui import (QMainWindow, QPrinter, QPainter, QFrame,
                               QVBoxLayout, QGridLayout, QToolBar, QPixmap,
                               QImageWriter)
-from guidata.qt.QtCore import QRect, Qt, QBuffer, QIODevice
-from guidata.qt import PYQT5
+from plotpy.qt.QtCore import QRect, Qt, QBuffer, QIODevice
+from plotpy.qt import PYQT5
 
-import guidata
-from guidata.configtools import get_icon
-from guidata.py3compat import is_text_string, to_text_string
+import plotpy
+from plotpy.configtools import get_icon
+from plotpy.py3compat import is_text_string, to_text_string
 
 # Local imports
 from plotpy.config import _
@@ -218,7 +218,7 @@ class Figure(object):
         return ax
 
     def build_window(self):
-        self.app = guidata.qapplication()
+        self.app = plotpy.qapplication()
         self.win = Window(wintitle=self.title)
         images = False
         for (i, j), ax in list(self.axes.items()):
@@ -236,7 +236,7 @@ class Figure(object):
     def save(self, fname, format, draft):
         if is_text_string(fname):
             if format == "pdf":
-                self.app = guidata.qapplication()
+                self.app = plotpy.qapplication()
                 if draft:
                     mode = QPrinter.ScreenResolution
                 else:
@@ -294,7 +294,7 @@ def do_mainloop(mainloop):
     if not _current_fig:
         print("Warning: must create a figure before showing it", file=sys.stderr)
     elif mainloop:
-        app = guidata.qapplication()
+        app = plotpy.qapplication()
         app.exec_()
         
 

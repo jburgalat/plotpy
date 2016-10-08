@@ -40,8 +40,8 @@ class OCSImageDialog(ImageDialog):
 def test():
     """Test"""
     # -- Create QApplication
-    import guidata
-    _app = guidata.qapplication()
+    import plotpy
+    _app = plotpy.qapplication()
     # --
     win = OCSImageDialog(toolbar=True,
                          wintitle="Oblique averaged cross section test")

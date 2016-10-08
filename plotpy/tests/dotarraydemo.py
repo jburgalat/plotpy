@@ -10,7 +10,7 @@ Dot array example
 =================
 
 Example showing how to create a custom item (drawing dots of variable size) 
-and integrate the associated `guidata` dataset (GUI-based form) to edit its 
+and integrate the associated `plotpy` dataset (GUI-based form) to edit its 
 parameters (directly into the same window as the plot itself, *and* within 
 the custom item parameters: right-click on the selectable item to open the 
 associated dialog box).
@@ -20,13 +20,13 @@ SHOW = True # Show test in GUI-based test launcher
 
 import numpy as np
 
-import guidata.qt.QtCore as QtCore
-import guidata.qt.QtGui as QtGui
+import plotpy.qt.QtCore as QtCore
+import plotpy.qt.QtGui as QtGui
 
-import guidata.dataset.datatypes as gdt
-import guidata.dataset.dataitems as gdi
-import guidata.dataset.qtwidgets as gdq
-import guidata.configtools as configtools
+import plotpy.dataset.datatypes as gdt
+import plotpy.dataset.dataitems as gdi
+import plotpy.dataset.qtwidgets as gdq
+import plotpy.configtools as configtools
 
 import plotpy.plot as gqp
 import plotpy.curve as gqc
@@ -136,7 +136,7 @@ class DotArrayDialog(gqp.ImageDialog):
             self.stamp_gbox.SIG_APPLY_BUTTON_CLICKED.connect(self.apply_params)
         except AttributeError:
             # plotpy v2:
-            from guidata.qt.QtCore import SIGNAL
+            from plotpy.qt.QtCore import SIGNAL
             self.connect(self.stamp_gbox, SIGNAL("apply_button_clicked()"),
                          self.apply_params)
         self.plot_layout.addWidget(self.stamp_gbox, 0, 1)
@@ -160,8 +160,8 @@ class DotArrayDialog(gqp.ImageDialog):
         
 if __name__ == "__main__":
     # -- Create QApplication
-    import guidata
-    _app = guidata.qapplication()
+    import plotpy
+    _app = plotpy.qapplication()
     
     dlg = DotArrayDialog()
     dlg.apply_params()

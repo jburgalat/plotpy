@@ -15,6 +15,134 @@ msgstr ""
 "Content-Transfer-Encoding: utf-8\n"
 "Generated-By: pygettext.py 1.5\n"
 
+#: plotpy\dataset\dataitems.py:38
+msgid "float"
+msgstr "flottant"
+
+#: plotpy\dataset\dataitems.py:38
+msgid "integer"
+msgstr "entier"
+
+#: plotpy\dataset\dataitems.py:44
+msgid " and "
+msgstr " et "
+
+#: plotpy\dataset\dataitems.py:44
+msgid " between "
+msgstr " compris entre "
+
+#: plotpy\dataset\dataitems.py:46
+msgid " higher than "
+msgstr " supérieur à "
+
+#: plotpy\dataset\dataitems.py:48
+msgid " lower than "
+msgstr " inférieur à "
+
+#: plotpy\dataset\dataitems.py:50
+msgid "non zero"
+msgstr "non nul"
+
+#: plotpy\dataset\dataitems.py:52
+msgid "unit:"
+msgstr "unité :"
+
+#: plotpy\dataset\dataitems.py:123
+msgid "even"
+msgstr "pair"
+
+#: plotpy\dataset\dataitems.py:125
+msgid "odd"
+msgstr "impair"
+
+#: plotpy\dataset\dataitems.py:244
+msgid "all file types"
+msgstr "tout type de fichier"
+
+#: plotpy\dataset\dataitems.py:245
+msgid "supported file types:"
+msgstr "types de fichiers pris en charge : "
+
+#: plotpy\dataset\qtitemwidgets.py:225 plotpy\dataset\qtitemwidgets.py:279
+msgid "Value is forced to %d"
+msgstr "La valeur est imposée à %d"
+
+#: plotpy\dataset\qtitemwidgets.py:493
+msgid "%s files"
+msgstr "Fichiers %s"
+
+#: plotpy\dataset\qtitemwidgets.py:495
+msgid "All supported files"
+msgstr "Tous les fichiers pris en charge"
+
+#: plotpy\dataset\qtitemwidgets.py:655
+msgid "Number of rows x Number of columns"
+msgstr "Nombre de lignes x Nombre de colonnes"
+
+#: plotpy\dataset\qtitemwidgets.py:657
+msgid "Edit array contents"
+msgstr "Modifier le contenu du tableau"
+
+#: plotpy\dataset\qtitemwidgets.py:663
+msgid "Smallest element in array"
+msgstr "Valeur minimale du tableau"
+
+#: plotpy\dataset\qtitemwidgets.py:666
+msgid "Largest element in array"
+msgstr "Valeur maximale du tableau"
+
+#: plotpy\dataset\qtwidgets.py:123
+msgid "Some required entries are incorrect"
+msgstr "Les champs surlignés n'ont pas été remplis correctement."
+
+#: plotpy\dataset\qtwidgets.py:124
+msgid "Please check highlighted fields."
+msgstr "Veuillez vérifier votre saisie."
+
+#: plotpy\dataset\qtwidgets.py:485
+msgid "Apply"
+msgstr "Appliquer"
+
+#: plotpy\guitest.py:54
+msgid "No description available"
+msgstr "Aucune description disponible"
+
+#: plotpy\guitest.py:82
+msgid "Description"
+msgstr "Description"
+
+#: plotpy\guitest.py:92
+msgid "Source code"
+msgstr "Code source"
+
+#: plotpy\guitest.py:98
+msgid "Run this script"
+msgstr "Exécuter ce script"
+
+#: plotpy\guitest.py:100
+msgid "Run all tests"
+msgstr "Exécuter tous les tests"
+
+#: plotpy\guitest.py:101
+msgid "Quit"
+msgstr "Quitter"
+
+#: plotpy\guitest.py:123
+msgid "Tests - %s module"
+msgstr "Tests - Module %s"
+
+#: plotpy\qthelpers.py:211
+msgid "Open a file"
+msgstr "Ouvrir un fichier"
+
+#: plotpy\qthelpers.py:212
+msgid "All"
+msgstr "Tout"
+
+#: plotpy\qthelpers.py:214
+msgid "Opening "
+msgstr "Ouverture de "
+
 #: plotpy\annotations.py:104 plotpy\annotations.py:133 plotpy\builder.py:1073
 msgid "Annotation"
 msgstr "Annotation"
@@ -1340,7 +1468,7 @@ msgstr "Sift"
 #: plotpy\tests\sift.py:46
 msgid ""
 "Signal and Image Filtering Tool<br>\n"
-"Simple signal and image processing application based on plotpy and guidata"
+"Simple signal and image processing application based on plotpy"
 msgstr ""
 
 #: plotpy\tests\sift.py:100 plotpy\tests\sift.py:114 plotpy\tests\sift.py:163

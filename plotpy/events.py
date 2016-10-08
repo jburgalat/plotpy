@@ -19,8 +19,8 @@ The `event` module handles event management (states, event filter, ...).
 from __future__ import print_function
 
 import weakref
-from guidata.qt.QtCore import QEvent, Qt, QObject, QPointF, Signal
-from guidata.qt.QtGui import QKeySequence
+from plotpy.qt.QtCore import QEvent, Qt, QObject, QPointF, Signal
+from plotpy.qt.QtGui import QKeySequence
 
 CursorShape = type(Qt.ArrowCursor)
 

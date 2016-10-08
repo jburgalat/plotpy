@@ -14,10 +14,10 @@ The `base` module provides base objects for internal use of the
 
 """
 
-from guidata.qt.QtGui import QWidget, QVBoxLayout, QHBoxLayout, QTabWidget
+from plotpy.qt.QtGui import QWidget, QVBoxLayout, QHBoxLayout, QTabWidget
 
-from guidata.qthelpers import create_toolbutton
-from guidata.configtools import get_icon
+from plotpy.qthelpers import create_toolbutton
+from plotpy.configtools import get_icon
 
 # Local imports
 from plotpy.config import _

@@ -15,7 +15,7 @@ SHOW = False # Show test in GUI-based test launcher
 import time
 import numpy as np
 
-from guidata.qt.QtGui import QApplication
+from plotpy.qt.QtGui import QApplication
 
 from plotpy.plot import CurveWindow, ImageWindow
 from plotpy.builder import make
@@ -121,7 +121,7 @@ class PColorBM(BaseBM):
 def run():
     """Run benchmark"""
     # Print informations banner
-    from guidata import qt
+    from plotpy import qt
     import plotpy
     qt_lib = {'pyqt': 'PyQt4', 'pyqt5': 'PyQt5', 'pyside': 'PySide'}[qt.API]
     title = "plotpy plot benchmark [%s v%s (Qt v%s), plotpy v%s]" %\
@@ -130,8 +130,8 @@ def run():
     print('-'*len(title))
     print()
 
-    import guidata
-    app = guidata.qapplication()
+    import plotpy
+    app = plotpy.qapplication()
     
     # Run benchmarks
     close = True

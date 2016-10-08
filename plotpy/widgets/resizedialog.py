@@ -23,9 +23,9 @@ Reference
 
 from __future__ import division, print_function
 
-from guidata.qt.QtGui import (QDialog, QDialogButtonBox, QVBoxLayout, QLabel,
+from plotpy.qt.QtGui import (QDialog, QDialogButtonBox, QVBoxLayout, QLabel,
                               QFormLayout, QLineEdit, QIntValidator, QCheckBox)
-from guidata.qt.QtCore import Qt
+from plotpy.qt.QtCore import Qt
 
 
 from plotpy.config import _
@@ -148,8 +148,8 @@ class ResizeDialog(QDialog):
 
     
 if __name__ == '__main__':
-    import guidata
-    qapp = guidata.qapplication()
+    import plotpy
+    qapp = plotpy.qapplication()
     test = ResizeDialog(None, (150, 100), (300, 200), "Enter the new size:")
     if test.exec_():
         print(test.width)

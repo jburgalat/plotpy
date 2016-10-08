@@ -254,16 +254,16 @@ import numpy as np
 import weakref
 import os.path as osp
 
-from guidata.qt.QtCore import Qt, QObject, QPointF, Signal
-from guidata.qt.QtGui import (QMenu, QActionGroup, QPrinter, QMessageBox,
+from plotpy.qt.QtCore import Qt, QObject, QPointF, Signal
+from plotpy.qt.QtGui import (QMenu, QActionGroup, QPrinter, QMessageBox,
                               QPrintDialog, QAction, QToolButton, QKeySequence)
-from guidata.qt.compat import getsavefilename, getopenfilename
+from plotpy.qt.compat import getsavefilename, getopenfilename
 
-from guidata.qthelpers import get_std_icon, add_actions, add_separator
-from guidata.configtools import get_icon
-from guidata.dataset.datatypes import DataSet
-from guidata.dataset.dataitems import BoolItem, FloatItem
-from guidata.py3compat import is_text_string, to_text_string
+from plotpy.qthelpers import get_std_icon, add_actions, add_separator
+from plotpy.configtools import get_icon
+from plotpy.dataset.datatypes import DataSet
+from plotpy.dataset.dataitems import BoolItem, FloatItem
+from plotpy.py3compat import is_text_string, to_text_string
 
 #Local imports
 from plotpy.config import _
@@ -712,7 +712,7 @@ class LabelTool(InteractiveTool):
 
     def add_label_to_plot(self, filter, event):
         plot = filter.plot
-        import guidata.dataset as ds
+        import plotpy.dataset as ds
         class TextParam(ds.datatypes.DataSet):
             text = ds.dataitems.TextItem("", _("Label"))
         textparam = TextParam(_("Label text"))
@@ -1557,8 +1557,8 @@ def save_snapshot(plot, p0, p1, new_size=None):
     if not dlg.exec_():
         return
         
-    from guidata.dataset.datatypes import DataSet, BeginGroup, EndGroup
-    from guidata.dataset.dataitems import BoolItem, ChoiceItem
+    from plotpy.dataset.datatypes import DataSet, BeginGroup, EndGroup
+    from plotpy.dataset.dataitems import BoolItem, ChoiceItem
     class SnapshotParam(DataSet):
         _levels = BeginGroup(_("Image levels adjustments"))
         apply_contrast = BoolItem(_("Apply contrast settings"),

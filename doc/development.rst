@@ -119,10 +119,10 @@ issues with Python 3. For example:
     by removing all the `u` string prefixes
 
   * in Python 3 `isinstance(text, basestring)` can be replaced by 
-    `is_text_string(text)` (function of the `guidata.py3compat` module)
+    `is_text_string(text)` (function of the `plotpy.py3compat` module)
 
   * in Python 3 `isinstance(text, unicode)` can be replaced by 
-    `is_unicode(text)` (function of the `guidata.py3compat` module)
+    `is_unicode(text)` (function of the `plotpy.py3compat` module)
 
   * in Python 3 `unicode(text)` can be replaced by `to_text_string(text)` 
-    (function of the `guidata.py3compat` module)
+    (function of the `plotpy.py3compat` module)

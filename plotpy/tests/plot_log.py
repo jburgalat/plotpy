@@ -15,8 +15,8 @@ from plotpy.builder import make
 def test():
     """Test"""
     # -- Create QApplication
-    import guidata
-    _app = guidata.qapplication()
+    import plotpy
+    _app = plotpy.qapplication()
     # --
     import numpy as np
     x = np.linspace(1, 10, 200)

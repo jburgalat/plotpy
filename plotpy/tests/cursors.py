@@ -23,8 +23,8 @@ def plot( *items ):
 def test():
     """Test"""
     # -- Create QApplication
-    import guidata
-    _app = guidata.qapplication()
+    import plotpy
+    _app = plotpy.qapplication()
     # --
     from numpy import linspace, sin
     x = linspace(-10, 10, 1000)+1

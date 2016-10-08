@@ -22,12 +22,12 @@ Reference
 .. autofunction:: create_qtdesigner_plugin
 """
 
-from guidata.qt import uic
-from guidata.qt.QtDesigner import QPyDesignerCustomWidgetPlugin
-from guidata.qt.QtGui import QIcon
+from plotpy.qt import uic
+from plotpy.qt.QtDesigner import QPyDesignerCustomWidgetPlugin
+from plotpy.qt.QtGui import QIcon
 
-from guidata.configtools import get_icon
-from guidata.py3compat import io
+from plotpy.configtools import get_icon
+from plotpy.py3compat import io
 
 
 def loadui(fname, replace_class="QwtPlot"):

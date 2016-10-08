@@ -27,7 +27,7 @@ import os
 import os.path as osp
 import subprocess
 from numpy.distutils.core import setup, Extension
-from guidata.utils import get_subpackages, get_package_data, cythonize_all
+from plotpy.utils import get_subpackages, get_package_data, cythonize_all
 
 #TODO: copy qtdesigner plugins in Lib\site-packages\PyQt4\plugins\designer\python
 #      note: this directory doesn't exist for a default PyQt4 install
@@ -79,12 +79,12 @@ Building, installation, ...
 ---------------------------
 
 The following packages are **required**: `PyQt4`_ (or `PyQt5`_), 
-`PythonQwt`_, `guidata`_, `NumPy`_, `SciPy`_ and `Pillow`_.
+`PythonQwt`_, `plotpy`_, `NumPy`_, `SciPy`_ and `Pillow`_.
 
 .. _PyQt4: https://pypi.python.org/pypi/PyQt4
 .. _PyQt5: https://pypi.python.org/pypi/PyQt5
 .. _PythonQwt: https://pypi.python.org/pypi/PythonQwt
-.. _guidata: https://pypi.python.org/pypi/guidata
+.. _plotpy: https://pypi.python.org/pypi/plotpy
 .. _NumPy: https://pypi.python.org/pypi/NumPy
 .. _SciPy: https://pypi.python.org/pypi/SciPy
 .. _Pillow: https://pypi.python.org/pypi/Pillow
@@ -198,7 +198,7 @@ setup(name=LIBNAME, version=__version__,
                     get_package_data(LIBNAME, ('.png', '.svg', '.mo', '.dcm',
                                                '.ui'))},
       data_files=[(r'Doc', [CHM_DOC])] if CHM_DOC else [],
-      install_requires=["NumPy>=1.3", "SciPy>=0.7", "guidata>=1.7.0",
+      install_requires=["NumPy>=1.3", "SciPy>=0.7", "plotpy>=1.7.0",
                         "PythonQwt>=0.5.0", "Pillow"],
       extras_require = {
                         'Doc':  ["Sphinx>=1.1"],

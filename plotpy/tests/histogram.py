@@ -24,7 +24,7 @@ def test():
 
 if __name__ == "__main__":
     # Create QApplication
-    import guidata
-    _app = guidata.qapplication()
+    import plotpy
+    _app = plotpy.qapplication()
     
     test()

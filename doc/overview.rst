@@ -54,7 +54,7 @@ The `plotpy` library also provides the following features:
     * curves, images and shapes:
 
         * multiple object selection for moving objects or editing their 
-          properties through automatically generated dialog boxes (``guidata``)
+          properties through automatically generated dialog boxes
         * item list panel: move objects from foreground to background, 
           show/hide objects, remove objects, ...
         * customizable aspect ratio

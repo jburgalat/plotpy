@@ -102,21 +102,21 @@ Reference
 
 import numpy as np
 
-from guidata.qt.QtGui import (QPen, QBrush, QColor, QFont, QFontDialog,
+from plotpy.qt.QtGui import (QPen, QBrush, QColor, QFont, QFontDialog,
                               QTransform)
-from guidata.qt.QtCore import Qt, QSizeF, QPointF
+from plotpy.qt.QtCore import Qt, QSizeF, QPointF
 
-from guidata.dataset.datatypes import (DataSet, ObjectItem, BeginGroup,
+from plotpy.dataset.datatypes import (DataSet, ObjectItem, BeginGroup,
                                        EndGroup, Obj, DataSetGroup,
                                        BeginTabGroup, EndTabGroup,
                                        GetAttrProp, NotProp)
-from guidata.dataset.dataitems import (ChoiceItem, BoolItem, FloatItem, IntItem,
+from plotpy.dataset.dataitems import (ChoiceItem, BoolItem, FloatItem, IntItem,
                                        ImageChoiceItem, ColorItem, StringItem,
                                        ButtonItem, FloatArrayItem, TextItem)
-from guidata.dataset.qtwidgets import DataSetEditLayout
-from guidata.dataset.qtitemwidgets import DataSetWidget
-from guidata.utils import update_dataset
-from guidata.py3compat import to_text_string
+from plotpy.dataset.qtwidgets import DataSetEditLayout
+from plotpy.dataset.qtitemwidgets import DataSetWidget
+from plotpy.utils import update_dataset
+from plotpy.py3compat import to_text_string
 
 # Local imports
 from plotpy.transitional import QwtPlot, QwtPlotCurve, QwtSymbol, QwtPlotMarker

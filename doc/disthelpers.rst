@@ -9,7 +9,7 @@ programs which may be executed without requiring a Python installation.
 Making such an executable program may be a non trivial task when the script 
 dependencies include libraries with data or extensions, such as `PyQt4` or 
 `plotpy`. This task has been considerably simplified thanks to 
-the helper functions provided by :py:mod:`guidata.disthelpers`.
+the helper functions provided by :py:mod:`plotpy.disthelpers`.
 
 Example
 ~~~~~~~
@@ -17,8 +17,7 @@ Example
 This example is included in `plotpy` source package (see the 
 ``deployment_example`` folder at source package root directory).
 
-Simple example script named ``simpledialog.pyw`` which is based on `plotpy` 
-(and implicitely on `guidata`)::
+Simple example script named ``simpledialog.pyw`` which is based on `plotpy`::
 
     from plotpy.plot import ImageDialog
     from plotpy.builder import make
@@ -33,7 +32,7 @@ Simple example script named ``simpledialog.pyw`` which is based on `plotpy`
     
     if __name__ == "__main__":
         import numpy as np
-        from guidata import qapplication
+        from plotpy import qapplication
         qapplication()
         dlg = VerySimpleDialog()
         dlg.set_data(np.random.rand(100, 100))
@@ -41,7 +40,7 @@ Simple example script named ``simpledialog.pyw`` which is based on `plotpy`
 
 The ``create_exe.py`` script may be written as the following::
 
-    from guidata import disthelpers as dh
+    from plotpy import disthelpers as dh
     dist = dh.Distribution()
     dist.setup('example', '1.0', 'plotpy app example', 'simpledialog.pyw')
     dist.add_modules('plotpy')

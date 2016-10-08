@@ -46,14 +46,14 @@ Reference
 
 import weakref
 import numpy as np
-from guidata.qt.QtCore import Qt, Signal
-from guidata.qt.QtGui import QHBoxLayout, QVBoxLayout, QToolBar
+from plotpy.qt.QtCore import Qt, Signal
+from plotpy.qt.QtGui import QHBoxLayout, QVBoxLayout, QToolBar
 
-from guidata.dataset.datatypes import DataSet
-from guidata.dataset.dataitems import FloatItem
-from guidata.utils import assert_interfaces_valid, update_dataset
-from guidata.configtools import get_icon, get_image_layout
-from guidata.qthelpers import add_actions, create_action
+from plotpy.dataset.datatypes import DataSet
+from plotpy.dataset.dataitems import FloatItem
+from plotpy.utils import assert_interfaces_valid, update_dataset
+from plotpy.configtools import get_icon, get_image_layout
+from plotpy.qthelpers import add_actions, create_action
 
 # Local imports
 from plotpy.transitional import QwtPlotCurve

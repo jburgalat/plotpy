@@ -17,6 +17,6 @@ def test():
     fp.edit()
 
 if __name__ == '__main__':
-    import guidata
-    _app = guidata.qapplication()
+    import plotpy
+    _app = plotpy.qapplication()
     test()

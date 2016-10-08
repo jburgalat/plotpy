@@ -46,11 +46,11 @@ Reference
    :inherited-members:
 """
 
-from guidata.qt.QtGui import QPen, QColor, QTextDocument
-from guidata.qt.QtCore import QRectF, QPointF
+from plotpy.qt.QtGui import QPen, QColor, QTextDocument
+from plotpy.qt.QtCore import QRectF, QPointF
 
-from guidata.utils import assert_interfaces_valid, update_dataset
-from guidata.py3compat import to_text_string
+from plotpy.utils import assert_interfaces_valid, update_dataset
+from plotpy.py3compat import to_text_string
 
 # Local imports
 from plotpy.transitional import QwtPlotItem

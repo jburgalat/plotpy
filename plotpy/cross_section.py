@@ -41,15 +41,15 @@ from __future__ import print_function
 
 import weakref
 
-from guidata.qt.QtGui import (QVBoxLayout, QSizePolicy, QHBoxLayout, QToolBar,
+from plotpy.qt.QtGui import (QVBoxLayout, QSizePolicy, QHBoxLayout, QToolBar,
                               QSpacerItem)
-from guidata.qt.QtCore import QSize, QPointF, Qt
+from plotpy.qt.QtCore import QSize, QPointF, Qt
 
 import numpy as np
 
-from guidata.utils import assert_interfaces_valid
-from guidata.configtools import get_icon
-from guidata.qthelpers import create_action, add_actions
+from plotpy.utils import assert_interfaces_valid
+from plotpy.configtools import get_icon
+from plotpy.qthelpers import create_action, add_actions
 
 # Local imports
 from plotpy.config import CONF, _

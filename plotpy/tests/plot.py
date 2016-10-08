@@ -9,7 +9,7 @@
 
 SHOW = True # Show test in GUI-based test launcher
 
-from guidata.qt.QtGui import QFont
+from plotpy.qt.QtGui import QFont
 
 from plotpy.plot import CurveDialog
 from plotpy.builder import make
@@ -30,8 +30,8 @@ def plot(*items):
 def test():
     """Test"""
     # -- Create QApplication
-    import guidata
-    _app = guidata.qapplication()
+    import plotpy
+    _app = plotpy.qapplication()
     # --
     from numpy import linspace, sin
     x = linspace(-10, 10, 200)

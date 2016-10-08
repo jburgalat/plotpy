@@ -77,11 +77,11 @@ Reference
 import numpy as np
 from math import fabs, sqrt, sin, cos, pi
 
-from guidata.qt.QtGui import QPen, QBrush, QPolygonF, QTransform, QPainter
-from guidata.qt.QtCore import Qt, QRectF, QPointF, QLineF
+from plotpy.qt.QtGui import QPen, QBrush, QPolygonF, QTransform, QPainter
+from plotpy.qt.QtCore import Qt, QRectF, QPointF, QLineF
 
-from guidata.utils import assert_interfaces_valid, update_dataset
-from guidata.py3compat import maxsize
+from plotpy.utils import assert_interfaces_valid, update_dataset
+from plotpy.py3compat import maxsize
 
 # Local imports
 from plotpy.transitional import QwtPlotItem, QwtSymbol, QwtPlotMarker

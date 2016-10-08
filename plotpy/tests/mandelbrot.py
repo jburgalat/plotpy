@@ -11,7 +11,7 @@ SHOW = True # Show test in GUI-based test launcher
 
 import numpy as np
 
-from guidata.qt.QtCore import QRectF, QPointF
+from plotpy.qt.QtCore import QRectF, QPointF
 
 from plotpy.config import _
 from plotpy.plot import ImageDialog
@@ -77,6 +77,6 @@ def mandel():
     win.exec_()
 
 if __name__ == "__main__":
-    import guidata
-    _app = guidata.qapplication()
+    import plotpy
+    _app = plotpy.qapplication()
     mandel()

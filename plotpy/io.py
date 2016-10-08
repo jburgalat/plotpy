@@ -34,7 +34,7 @@ import re
 import os.path as osp
 import numpy as np
 
-from guidata.py3compat import is_text_string, to_text_string
+from plotpy.py3compat import is_text_string, to_text_string
 
 # Local imports
 from plotpy.config import _
@@ -504,7 +504,7 @@ def load_item(reader, group_name):
 
 def save_items(writer, items):
     """Save items to HDF5 file:
-        * writer: :py:class:`guidata.hdf5io.HDF5Writer` object
+        * writer: :py:class:`plotpy.hdf5io.HDF5Writer` object
         * items: serializable plot items"""
     counts = {}
     names = []
@@ -522,7 +522,7 @@ def save_items(writer, items):
 
 def load_items(reader):
     """Load items from HDF5 file:
-        * reader: :py:class:`guidata.hdf5io.HDF5Reader` object"""
+        * reader: :py:class:`plotpy.hdf5io.HDF5Reader` object"""
     with reader.group('plot_items'):
         names = reader.read_sequence()
     items = []

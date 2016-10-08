@@ -60,8 +60,8 @@ def compute_image():
 def test():
     """Test"""
     # -- Create QApplication
-    import guidata
-    _app = guidata.qapplication()
+    import plotpy
+    _app = plotpy.qapplication()
     # --    
     imshow(*compute_image())
 

@@ -7,19 +7,19 @@
 
 """
 SIFT, the Signal and Image Filtering Tool
-Simple signal and image processing application based on plotpy and guidata
+Simple signal and image processing application based on plotpy and plotpy
 """
 
 from __future__ import unicode_literals, print_function
 
 SHOW = True # Show test in GUI-based test launcher
 
-from guidata.qt.QtGui import (QMainWindow, QMessageBox, QSplitter, QListWidget,
+from plotpy.qt.QtGui import (QMainWindow, QMessageBox, QSplitter, QListWidget,
                               QVBoxLayout, QHBoxLayout, QWidget, QTabWidget,
                               QMenu, QApplication, QCursor, QFont)
-from guidata.qt.QtCore import Qt, QT_VERSION_STR, PYQT_VERSION_STR, Signal
-from guidata.qt import PYQT5
-from guidata.qt.compat import getopenfilenames, getsavefilename
+from plotpy.qt.QtCore import Qt, QT_VERSION_STR, PYQT_VERSION_STR, Signal
+from plotpy.qt import PYQT5
+from plotpy.qt.compat import getopenfilenames, getsavefilename
 
 import sys
 import platform
@@ -27,16 +27,16 @@ import os.path as osp
 import os
 import numpy as np
 
-from guidata.dataset.datatypes import DataSet, ValueProp
-from guidata.dataset.dataitems import (IntItem, FloatArrayItem, StringItem,
+from plotpy.dataset.datatypes import DataSet, ValueProp
+from plotpy.dataset.dataitems import (IntItem, FloatArrayItem, StringItem,
                                        ChoiceItem, FloatItem, DictItem,
                                        BoolItem)
-from guidata.dataset.qtwidgets import DataSetEditGroupBox
-from guidata.configtools import get_icon
-from guidata.qthelpers import create_action, add_actions, get_std_icon
-from guidata.qtwidgets import DockableWidget, DockableWidgetMixin
-from guidata.utils import update_dataset
-from guidata.py3compat import to_text_string
+from plotpy.dataset.qtwidgets import DataSetEditGroupBox
+from plotpy.configtools import get_icon
+from plotpy.qthelpers import create_action, add_actions, get_std_icon
+from plotpy.widgets.misc import DockableWidget, DockableWidgetMixin
+from plotpy.utils import update_dataset
+from plotpy.py3compat import to_text_string
 
 from plotpy.config import _
 from plotpy.plot import CurveWidget, ImageWidget
@@ -44,7 +44,7 @@ from plotpy.builder import make
 
 APP_NAME = _("Sift")
 APP_DESC = _("""Signal and Image Filtering Tool<br>
-Simple signal and image processing application based on plotpy and guidata""")
+Simple signal and image processing application based on plotpy and plotpy""")
 VERSION = '0.2.8'
 
 
@@ -306,7 +306,7 @@ class ObjectFT(QSplitter):
             else:
                 self.update_item(row)
                 self.plot.set_item_visible(item, True)
-                self.plot.set_active_item(item)
+#                self.plot.set_active_item(item)
         self.plot.do_autoscale()
         
     def refresh_list(self, new_current_row='current'):
@@ -1337,7 +1337,7 @@ class MainWindow(QMainWindow):
 
 
 def run():
-    from guidata import qapplication
+    from plotpy import qapplication
     app = qapplication()
     window = MainWindow()
     window.show()
