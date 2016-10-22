@@ -28,6 +28,7 @@ def hist2d_func(X, Y, Z):
     plot.add_item(hist2d)
     plot.add_item(curve)
     plot.set_item_visible(curve, False)
+    win.get_itemlist_panel().show()
     win.show()
     win.exec_()
 

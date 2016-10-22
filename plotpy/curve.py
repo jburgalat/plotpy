@@ -1401,7 +1401,11 @@ class CurvePlot(BasePlot):
         # after the filter object has been destroyed by Python.
         canvas = self.canvas()
         if canvas:
-            canvas.removeEventFilter(self.filter)
+            try:
+                canvas.removeEventFilter(self.filter)
+            except RuntimeError:
+                # Filter has already been removed
+                pass
 
     # generic helper methods        
     def canvas2plotitem(self, plot_item, x_canvas, y_canvas):

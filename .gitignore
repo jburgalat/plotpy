@@ -12,6 +12,9 @@ test2.u16.tif
 contrast.png
 doctmp/
 
+*.h5
+*.pickle
+
 # Created by https://www.gitignore.io/api/python
 
 ### Python ###

@@ -46,10 +46,11 @@ from plotpy.qt.QtGui import (QAction, QApplication, QColor, QHBoxLayout,
                              QPushButton, QStyle, QToolButton, QVBoxLayout,
                              QWidget, QGroupBox, QMessageBox)
 from plotpy.qt.QtCore import Qt
-from plotpy.qt.compat import getsavefilename, getopenfilename, getopenfilenames
-from plotpy.py3compat import to_text_string
 
 # Local imports
+from plotpy.qt.compat import getsavefilename, getopenfilename, getopenfilenames
+from plotpy.py3compat import to_text_string, is_text_string
+from plotpy.configtools import get_icon
 from plotpy.config import _
 from plotpy import io
 

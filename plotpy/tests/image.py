@@ -64,7 +64,7 @@ def compute_image_2():
     TMAX = 32000
     TMIN = 32000
     S=5.
-    x = np.array(np.linspace(-5*S, 5*S, N), float)
+    x = np.array(np.linspace(-5*S, 5*S, N), T)
     img = np.zeros( (N, N), T )
     x.shape = (1, N)
     img += x**2
@@ -98,7 +98,7 @@ def compute_image_3():
     img = np.zeros( (N, N), T )
     x = np.arange(N, dtype=float)
     x.shape = (1, N)
-    DK = N/NK
+    DK = N//NK
     for i in range(NK):
         S = i+1
         y = S*(x//S)

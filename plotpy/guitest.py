@@ -99,6 +99,7 @@ class TestPropertiesWidget(QWidget):
         self.editor = CodeEditor(self)
         self.editor.setup_editor(linenumbers=True, font=font)
         self.editor.setReadOnly(True)
+        self.editor.set_color_scheme("Spyder")
         group_code = QGroupBox(_("Source code"), self)
         layout = QVBoxLayout()
         layout.addWidget(self.editor)
@@ -153,9 +154,9 @@ class TestLauncherWindow(QSplitter):
         
         QShortcut(QKeySequence("Escape"), self, self.close)
             
-        self.setSizes([150, 1])
+        self.setSizes([200, 1])
         self.setStretchFactor(1, 1)
-        self.resize(QSize(950, 600))
+        self.resize(QSize(1000, 600))
         self.properties.set_item(tests[0])
     
 
