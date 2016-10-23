@@ -58,22 +58,20 @@ def install_translator(qapp):
                   
 def about(html=True, copyright_only=False):
     """Return text about this package"""
-    import sys, os, os.path as osp, platform, plotpy, qwt
+    import sys, os, os.path as osp, platform, plotpy
     from plotpy.config import _
     from plotpy.qt.QtCore import QT_VERSION_STR, PYQT_VERSION_STR
     name = __file__.split(osp.sep)[-2]
     tf1 = (name, __version__, __description__)
     tf2 = (platform.python_version(),
            '64 bits' if sys.maxsize > 2**32 else '32 bits',
-           QT_VERSION_STR, PYQT_VERSION_STR,
-           qwt.__version__, plotpy.__version__,
+           QT_VERSION_STR, PYQT_VERSION_STR, plotpy.__version__,
            _("on"), platform.system())
     if html:
         short_desc = "This widget is powered by <b>%s</b> v%s"\
                      "<p>%s<p>Created by Pierre Raybaut" % tf1
         desc = "Copyright &copy; 2010-2016 CEA"\
-               "<p>Python %s %s, Qt %s, PyQt %s, "\
-               "PythonQwt %s, plotpy %s %s %s" % tf2
+               "<p>Python %s %s, Qt %s, PyQt %s, plotpy %s %s %s" % tf2
         if not copyright_only:
             desc = short_desc + "<br>" + desc
     else:
