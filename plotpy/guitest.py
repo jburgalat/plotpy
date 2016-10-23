@@ -17,13 +17,17 @@ import subprocess
 try:  # Spyder3.0
     from spyder.widgets.sourcecode.codeeditor import CodeEditor
 except ImportError:
-    from spyderlib.widgets.sourcecode.codeeditor import CodeEditor
+    try:
+        from spyderlib.widgets.sourcecode.codeeditor import CodeEditor
+    except ImportError:
+        CodeEditor = None
 # Local imports
-from plotpy.qt.QtGui import (QWidget, QVBoxLayout, QSplitter, QFont,
-                              QListWidget, QPushButton, QLabel, QGroupBox,
-                              QHBoxLayout, QShortcut, QKeySequence)
+from plotpy.qt.QtGui import (QWidget, QVBoxLayout, QSplitter, QFont, QGroupBox,
+                             QListWidget, QPushButton, QLabel, QHBoxLayout,
+                             QShortcut, QKeySequence, QTextEdit)
 from plotpy.qt.QtCore import Qt, QSize
 
+from plotpy.py3compat import to_text_string
 from plotpy.config import _
 from plotpy.configtools import get_icon, get_family, MONOSPACE
 from plotpy.qthelpers import get_std_icon
@@ -96,10 +100,14 @@ class TestPropertiesWidget(QWidget):
         layout.addWidget(self.desc_label)
         group_desc.setLayout(layout)
         
-        self.editor = CodeEditor(self)
-        self.editor.setup_editor(linenumbers=True, font=font)
+        if CodeEditor is None:
+            self.editor = QTextEdit(self)
+            self.editor.setFont(font)
+        else:
+            self.editor = CodeEditor(self)
+            self.editor.setup_editor(linenumbers=True, font=font)
+            self.editor.set_color_scheme("Spyder")
         self.editor.setReadOnly(True)
-        self.editor.set_color_scheme("Spyder")
         group_code = QGroupBox(_("Source code"), self)
         layout = QVBoxLayout()
         layout.addWidget(self.editor)
@@ -121,7 +129,11 @@ class TestPropertiesWidget(QWidget):
         
     def set_item(self, test):
         self.desc_label.setText(test.get_description())
-        self.editor.set_text_from_file(test.filename)
+        if CodeEditor is None:
+            text = to_text_string(open(test.filename, 'rb').read(), 'utf-8')
+            self.editor.setPlainText(text)
+        else:
+            self.editor.set_text_from_file(test.filename)
 
 
 class TestLauncherWindow(QSplitter):
