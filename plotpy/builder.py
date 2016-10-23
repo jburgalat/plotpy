@@ -1135,7 +1135,7 @@ class PlotItemBuilder(object):
         return self.__annotated_shape(AnnotatedSegment,
                                       x0, y0, x1, y1, title, subtitle)
 
-    def info_label(self, anchor, comps, title=None):
+    def info_label(self, anchor, comps, title=None, curveparam=None):
         """
         Make an info label `plot item` 
         (:py:class:`plotpy.label.DataInfoLabel` object)
@@ -1145,7 +1145,7 @@ class PlotItemBuilder(object):
         param.read_config(CONF, "plot", "info_label")
         if title is not None:
             param.label = title
-        else:
+        elif curveparam is None:
             global LABEL_COUNT
             LABEL_COUNT += 1
             param.label = make_title(basename, LABEL_COUNT)
@@ -1154,7 +1154,7 @@ class PlotItemBuilder(object):
         param.anchor = anchor
         c = ANCHOR_OFFSETS[anchor]
         param.xc, param.yc = c
-        return DataInfoLabel(param, comps)
+        return DataInfoLabel(param, comps, curveparam)
     
     def range_info_label(self, range, anchor, label,
                          function=None, title=None):
@@ -1182,12 +1182,13 @@ class PlotItemBuilder(object):
         (:py:class:`plotpy.label.DataInfoLabel` object)
         (see example: :py:mod:`plotpy.tests.computations`)
         """
+        curveparam = None
         if title is None:
-            title = curve.curveparam.label
+            curveparam = curve.curveparam
         return self.computations(range, anchor, [ (curve, label, function) ],
-                                 title=title)
+                                 title=title, curveparam=curveparam)
 
-    def computations(self, range, anchor, specs, title=None):
+    def computations(self, range, anchor, specs, title=None, curveparam=None):
         """
         Make computation labels  `plot item` 
         (:py:class:`plotpy.label.DataInfoLabel` object)
@@ -1203,8 +1204,9 @@ class PlotItemBuilder(object):
                 curve0 = curve
             same_curve = same_curve and curve is curve0
         if title is None and same_curve:
-            title = curve.curveparam.label
-        return self.info_label(anchor, comps, title=title)
+            curveparam = curve.curveparam
+        return self.info_label(anchor, comps, title=title,
+                               curveparam=curveparam)
 
     def computation2d(self, rect, anchor, label, image, function, title=None):
         """

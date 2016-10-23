@@ -577,11 +577,12 @@ class RangeComputation2d(ObjectInfo):
 class DataInfoLabel(LabelItem):
     __implements__ = (IBasePlotItem,)
 
-    def __init__(self, labelparam=None, infos=None):
+    def __init__(self, labelparam=None, infos=None, curveparam=None):
         super(DataInfoLabel, self).__init__(None, labelparam)
         if isinstance(infos, ObjectInfo):
             infos = [infos]
         self.infos = infos
+        self.curveparam = curveparam  # bound item's CurveParam
     
     def __reduce__(self):
         return (self.__class__, (self.labelparam, self.infos))
@@ -591,6 +592,12 @@ class DataInfoLabel(LabelItem):
 
     def update_text(self):
         title = self.labelparam.label
+        if self.curveparam is not None:
+            #  Update label whenever bound curve line color or label changes
+            if not title:
+                title = self.curveparam.label
+            self.text.setDefaultStyleSheet('div { color: %s; }'
+                                           % self.curveparam.line.color)
         if title:
             text = ["<b>%s</b>" % title]
         else:
