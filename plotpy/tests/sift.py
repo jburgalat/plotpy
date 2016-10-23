@@ -7,7 +7,7 @@
 
 """
 SIFT, the Signal and Image Filtering Tool
-Simple signal and image processing application based on plotpy and plotpy
+Simple signal and image processing application based on plotpy
 """
 
 from __future__ import unicode_literals, print_function
@@ -17,12 +17,11 @@ SHOW = True # Show test in GUI-based test launcher
 from plotpy.qt.QtGui import (QMainWindow, QMessageBox, QSplitter, QListWidget,
                               QVBoxLayout, QHBoxLayout, QWidget, QTabWidget,
                               QMenu, QApplication, QCursor, QFont)
-from plotpy.qt.QtCore import Qt, QT_VERSION_STR, PYQT_VERSION_STR, Signal
+from plotpy.qt.QtCore import Qt, Signal
 from plotpy.qt import PYQT5
 from plotpy.qt.compat import getopenfilenames, getsavefilename
 
 import sys
-import platform
 import os.path as osp
 import os
 import numpy as np
@@ -306,7 +305,8 @@ class ObjectFT(QSplitter):
             else:
                 self.update_item(row)
                 self.plot.set_item_visible(item, True)
-#                self.plot.set_active_item(item)
+                self.plot.set_active_item(item)
+                self.plot.unselect_item(item)
         self.plot.do_autoscale()
         
     def refresh_list(self, new_current_row='current'):
