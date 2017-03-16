@@ -198,7 +198,7 @@ setup(name=LIBNAME, version=__version__,
                     get_package_data(LIBNAME, ('.png', '.svg', '.mo', '.dcm',
                                                '.ui'))},
       data_files=[(r'Doc', [CHM_DOC])] if CHM_DOC else [],
-      install_requires=["NumPy>=1.3", "SciPy>=0.7", "plotpy>=1.7.0",
+      install_requires=["NumPy>=1.3", "SciPy>=0.7",
                         "PythonQwt>=0.5.0", "Pillow"],
       extras_require = {
                         'Doc':  ["Sphinx>=1.1"],
