@@ -79,11 +79,10 @@ Building, installation, ...
 ---------------------------
 
 The following packages are **required**: `PyQt4`_ (or `PyQt5`_), 
-`PythonQwt`_, `plotpy`_, `NumPy`_, `SciPy`_ and `Pillow`_.
+`plotpy`_, `NumPy`_, `SciPy`_ and `Pillow`_.
 
 .. _PyQt4: https://pypi.python.org/pypi/PyQt4
 .. _PyQt5: https://pypi.python.org/pypi/PyQt5
-.. _PythonQwt: https://pypi.python.org/pypi/PythonQwt
 .. _plotpy: https://pypi.python.org/pypi/plotpy
 .. _NumPy: https://pypi.python.org/pypi/NumPy
 .. _SciPy: https://pypi.python.org/pypi/SciPy
@@ -198,8 +197,8 @@ setup(name=LIBNAME, version=__version__,
                     get_package_data(LIBNAME, ('.png', '.svg', '.mo', '.dcm',
                                                '.ui'))},
       data_files=[(r'Doc', [CHM_DOC])] if CHM_DOC else [],
-      install_requires=["NumPy>=1.3", "SciPy>=0.7", "plotpy>=1.7.0",
-                        "PythonQwt>=0.5.0", "Pillow"],
+      install_requires=["NumPy>=1.3", "SciPy>=0.7",
+                        "Pillow"],
       extras_require = {
                         'Doc':  ["Sphinx>=1.1"],
                         'DICOM':  ["pydicom>=0.9.3"],
