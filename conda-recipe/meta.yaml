@@ -3,7 +3,7 @@ package:
   version: "0.1.0"
 
 source:
-  git_rev: 14360ce2248f69ef8bdeead5346b250d4427a417
+  git_rev: 38a37168bccea7b218dfd2540ce32c4ec58ec4d0
   git_url: https://github.com/naspert/plotpy.git
 
 requirements:
