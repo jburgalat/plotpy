@@ -1,0 +1,1 @@
+$PYTHON setup.py --sse2 --sse3 install     # Python command to install the script.

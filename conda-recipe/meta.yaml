@@ -1,0 +1,30 @@
+package:
+  name: plotpy
+  version: "0.1.0"
+
+source:
+  git_rev: 38a37168bccea7b218dfd2540ce32c4ec58ec4d0
+  git_url: https://github.com/naspert/plotpy.git
+
+requirements:
+  build:
+    - python
+    - sip
+    - qt
+    - spyder
+    - h5py
+    - cython
+    - pillow
+    - scipy
+    - numpy
+  run:
+    - python
+
+test:
+  imports:
+    - plotpy
+
+about:
+  home: https://github.com/PierreRaybaut/plotpy
+  license: CeciLL
+  license_file: Licence_CeCILL_V2-en.txt
