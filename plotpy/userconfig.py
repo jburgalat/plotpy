@@ -172,7 +172,7 @@ class UserConfig(cp.ConfigParser):
                 for v in value:
                     _check(key+"[]", v)
             else:
-                if not isinstance(value, (bool, int, float, str)):
+                if not isinstance(value, (bool, int, float, str, unicode)):
                     errors.append("Invalid value for %s: %r" % (key, value))
         for name, section in list(self.defaults.items()):
             assert isinstance(name, str)
