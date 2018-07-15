@@ -5,7 +5,7 @@
 See [documentation](http://pythonhosted.org/plotpy/) for more details on 
 the library and [changelog](CHANGELOG.md) for recent history of changes.
 
-Copyright © 2009-2015 CEA, Pierre Raybaut, licensed under the terms of the 
+Copyright © 2009-2018 CEA, Pierre Raybaut, licensed under the terms of the 
 [CECILL License](Licence_CeCILL_V2-en.txt).
 
 
