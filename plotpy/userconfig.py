@@ -50,6 +50,9 @@ import sys
 from plotpy.py3compat import configparser as cp
 from plotpy.py3compat import is_text_string, is_unicode, PY2
 
+if not PY2:
+    unicode = str
+
 def _check_values(sections):
     # Checks if all key/value pairs are writable
     err = False
